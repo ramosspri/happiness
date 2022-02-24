@@ -18,7 +18,6 @@ declare module 'styled-components' {
       none: string;
       normal: string;
     };
-
     font: {
       sizes: {
         small: string;
