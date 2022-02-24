@@ -3,9 +3,17 @@ import { ContainerBody } from '../ContainerBody/styles';
 
 const HomeCorpo = () => {
   return (
+    <>
     <ContainerBody>
       <p>Home</p>
     </ContainerBody>
+    <ContainerBody>
+      <p>Home</p>
+    </ContainerBody>
+    <ContainerBody>
+      <p>Home</p>
+    </ContainerBody>
+  </>
   );
 };
 
