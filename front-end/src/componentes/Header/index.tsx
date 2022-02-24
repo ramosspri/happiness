@@ -1,6 +1,5 @@
 import React from 'react';
 import { Logo } from './Logo';
-import MenuMobile from './MenuMobile';
 import { ContainerHeader } from './styles';
 import { SideMenu } from '../SideMenu';
 
@@ -9,7 +8,6 @@ import { SideMenu } from '../SideMenu';
 const Header = () => {
   return (
     <ContainerHeader>
-      <MenuMobile />
       <SideMenu />
       <Logo />
     </ContainerHeader>
