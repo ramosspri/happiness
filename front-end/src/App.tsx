@@ -1,9 +1,11 @@
 import React from 'react';
-import Footer from './componentes/Footer';
+import Template from './componentes/Template';
 
 function App() {
   return (
-    <Footer />
+    //USER PROVIDER VAI FICAR AQUI
+    <Template />
+    //USER PROVIDER VAI FICAR AQUI
   );
 }
 
