@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Cadastro = () => {
+export const Cadastro = () => {
   return <p>Cadastrar usuários</p>;
 };
-
-export default Cadastro;

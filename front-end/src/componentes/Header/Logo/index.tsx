@@ -1,7 +1,7 @@
 import React from 'react';
-
+import { Teste } from './styles';
 // import { Container } from './styles';
 
 export const Logo = () => {
-  return <p>Logo</p>;
+  return <Teste>Logo</Teste>;
 };

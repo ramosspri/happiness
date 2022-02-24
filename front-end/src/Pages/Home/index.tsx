@@ -1,10 +1,13 @@
 import React from 'react';
 import HomeCorpo from '../../componentes/Body/Home';
-
-// import { Container } from './styles';
+import { ContainerMain } from '../../componentes/ContainerMain/ContainerMain';
 
 const Home = () => {
-  return <HomeCorpo />;
+  return (
+    <ContainerMain>
+      <HomeCorpo />
+    </ContainerMain>
+  );
 };
 
 export default Home;

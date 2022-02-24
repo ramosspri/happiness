@@ -1,10 +1,11 @@
 import React from 'react';
-import Tabela from '../../componentes/Body/Tabela';
+import { Tabela } from '../../componentes/Body/Tabela';
+import { ContainerMain } from '../../componentes/ContainerMain/ContainerMain';
 
-// import { Container } from './styles';
-
-const Lista = () => {
-  return <Tabela />;
+export const Listaa = () => {
+  return (
+    <ContainerMain>
+      <Tabela />
+    </ContainerMain>
+  );
 };
-
-export default Lista;

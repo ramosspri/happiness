@@ -1,15 +1,18 @@
 import React from 'react';
-import Cadastro from './Cadastro';
-import Lista from './Lista';
-import { ContainerLista } from './styles';
+import { ContainerBody } from '../ContainerBody/styles';
+import { Cadastro } from './Cadastro';
+import { Lista } from './Lista';
 
-const Tabela = () => {
+export const Tabela = () => {
   return (
-    <ContainerLista>
-      <Cadastro />
-      <Lista />
-    </ContainerLista>
+    <>
+      <ContainerBody>
+        <Cadastro />
+      </ContainerBody>
+
+      <ContainerBody>
+        <Lista />
+      </ContainerBody>
+    </>
   );
 };
-
-export default Tabela;

@@ -3,14 +3,14 @@ import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from 'styled-components';
-import { theme } from './styles/theme';
+import { themeLight } from './styles/themeLight';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { GlobalStyle } from './componentes/styles/GlobalStyle';
+import { GlobalStyle } from './styles/GlobalStyle';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={themeLight}>
       <GlobalStyle />
       <ToastContainer autoClose={3000} className="toast-container" />
       <App />
