@@ -7,6 +7,7 @@ export const themeLight = {
     assets_red: '#FF3D33',
     assets_green: '#54BF00',
     assets_blue: '#00A4E1',
+    border_grey: '#B6B1B1',
   },
   borderRadius: {
     none: '0',

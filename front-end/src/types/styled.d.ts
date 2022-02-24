@@ -12,6 +12,7 @@ declare module 'styled-components' {
       assets_red: string;
       assets_green: string;
       assets_blue: string;
+      border_grey: string;
     };
     borderRadius: {
       none: string;
