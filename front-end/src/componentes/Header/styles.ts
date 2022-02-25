@@ -12,3 +12,8 @@ export const ContainerHeader = styled.header`
   border-bottom-left-radius: 0.3125rem;
   margin-bottom: 2.625rem;
 `;
+
+export const DivMenu = styled.div`
+  display: flex;
+  justify-content: space-between;
+`
