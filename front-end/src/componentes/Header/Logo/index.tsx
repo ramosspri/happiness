@@ -1,6 +1,7 @@
 import React from 'react';
-import { Teste } from './styles';
+import { ImgLogo } from './styles';
+import Logomarca from '../../../assets/LogoLight.png'
 
 export const Logo = () => {
-  return <Teste>Logo</Teste>;
+  return <ImgLogo src={Logomarca} />;
 };

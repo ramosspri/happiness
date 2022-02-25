@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
-export const Teste = styled.p`
-  color: ${({ theme }) => theme.colors.assets_green};
+export const ImgLogo = styled.img`
+  width: 6.875rem;
+  height: 6.875rem;
 `;
