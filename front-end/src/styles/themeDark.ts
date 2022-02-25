@@ -17,8 +17,8 @@ export const themeDark = {
 
   font: {
     sizes: {
-      small: '.875rem',
-      medium: '.75rem',
+      small: '0.75rem',
+      medium: '0.875rem',
       large: '1.125rem',
       xlarge: '1.5rem',
     },

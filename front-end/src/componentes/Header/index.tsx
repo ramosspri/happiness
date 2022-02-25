@@ -3,8 +3,6 @@ import { Logo } from './Logo';
 import { ContainerHeader } from './styles';
 import { SideMenu } from '../SideMenu';
 
-// import { Container } from './styles';
-
 const Header = () => {
   return (
     <ContainerHeader>
