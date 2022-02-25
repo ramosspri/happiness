@@ -22,10 +22,12 @@ export const ConteinerModal = styled.div`
 `;
 
 export const HeaderModal = styled.header`
-  display: flex;
-  justify-content: flex-end;
   position: relative;
-  top: -1.0625rem;
-  left: 0.625rem;
+  top: -20px;
+  left: 100%;
   font-weight: ${({ theme }) => theme.font.weights.bold};
+  font-family: 'Roboto', sans-serif;
+  cursor: pointer;
+  color: ${({ theme }) => theme.colors.letter_color};
+  width: 5px;
 `;

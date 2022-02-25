@@ -12,8 +12,9 @@ export const ContainerFooter = styled.footer`
   background-color: ${({ theme }) => theme.colors.primary};
   color: ${({ theme }) => theme.colors.secondary};
   height: 3.6rem;
+  z-index: 100;
 `;
 
-export const DivIcon = styled.div `
+export const DivIcon = styled.div`
   margin: 0.625rem;
-`
+`;
