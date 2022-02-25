@@ -41,6 +41,12 @@ export const GlobalStyle = createGlobalStyle`
         content: '';
         content: none;
     }
+    html {
+      box-sizing: border-box;
+    }
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
     table {
         border-collapse: collapse;
         border-spacing: 0;

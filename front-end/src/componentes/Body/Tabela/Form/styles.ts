@@ -16,8 +16,6 @@ export const InputStyled = styled.input`
   height: 2.1875rem;
   padding-left: 10px;
   font-size: 18px;
-
-  box-sizing: border-box;
 `;
 
 export const BlocoInput = styled.div`
