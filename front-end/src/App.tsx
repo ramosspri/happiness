@@ -1,11 +1,12 @@
 import React from 'react';
 import Template from './componentes/Template';
+import { UsersProvider } from './context/UsersContext';
 
 function App() {
   return (
-    //USER PROVIDER VAI FICAR AQUI
-    <Template />
-    //USER PROVIDER VAI FICAR AQUI
+    <UsersProvider>
+      <Template />
+    </UsersProvider>
   );
 }
 

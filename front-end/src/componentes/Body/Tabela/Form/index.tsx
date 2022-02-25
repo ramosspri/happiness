@@ -1,9 +1,11 @@
 import React from 'react';
+import { useCreateContext } from '../../../../context/UsersContext';
 import { Button } from './Button';
 import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
-// import { Container } from './styles';
 
 const Form = () => {
+  const { input, setInput } = useCreateContext();
+  console.log(input);
   return (
     <ContainerForm>
       <BlocoInput>
