@@ -15,9 +15,9 @@ export const ConteinerModal = styled.div`
   background-color: white;
   width: 90%;
   position: fixed;
-  top: 18%;
+  top: 25%;
   left: 50%;
-  transform: translate(-50%, -18%);
+  transform: translate(-50%, -25%);
   border-radius: ${({ theme }) => theme.borderRadius.normal};
 `;
 

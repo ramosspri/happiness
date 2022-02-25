@@ -7,6 +7,8 @@ export const ContainerBody = styled.div`
   border: 1px solid ${({ theme }) => theme.colors.border_grey};
   box-shadow: ${({ theme }) => theme.font.shadow.shadow_container};
   padding: 2rem 1.6875rem;
-  margin-top: 2rem;
   box-sizing: border-box;
+  & + & {
+    margin-top: 1rem;
+  }
 `;
