@@ -47,5 +47,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     label {
         display:block;
+        font-size:1.125rem;
     }
 `;

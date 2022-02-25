@@ -1,25 +1,65 @@
 import React from 'react';
-import { ContainerForm, InputStyled } from './styles';
-
+import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 // import { Container } from './styles';
 
 const Form = () => {
   return (
     <ContainerForm>
-      <label htmlFor="id">ID</label>
-      <InputStyled type="text" name="id" />
+      <BlocoInput>
+        <label htmlFor="id">ID</label>
+        <InputStyled type="text" name="id" />
+      </BlocoInput>
 
-      <label htmlFor="nome">Nome</label>
-      <InputStyled type="text" name="nome" />
+      <BlocoInput>
+        <label htmlFor="nome">Nome</label>
+        <InputStyled type="text" name="nome" />
+      </BlocoInput>
 
-      <label htmlFor="email">E-mail</label>
-      <InputStyled type="text" name="email" />
+      <BlocoInput>
+        <label htmlFor="email">E-mail</label>
+        <InputStyled type="text" name="email" />
+      </BlocoInput>
 
-      <label htmlFor="telefone">Telefone</label>
-      <InputStyled type="text" name="telefone" />
-
-      <label>Linguagens</label>
-      <label>Frameworks</label>
+      <BlocoInput>
+        <label htmlFor="telefone">Telefone</label>
+        <InputStyled type="text" name="telefone" />
+      </BlocoInput>
+      <div>
+        <label htmlFor="linguagens">Linguagens 1</label>
+        <SelectStyled name="linguagens">
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="typescript">Typescript</option>
+          <option value="javascript">Javascript</option>
+        </SelectStyled>
+      </div>
+      <div>
+        <label htmlFor="linguagens">Linguagens 2</label>
+        <SelectStyled name="linguagens">
+          <option value="python">Python</option>
+          <option value="java">Java</option>
+          <option value="typescript">Typescript</option>
+          <option value="javascript">Javascript</option>
+        </SelectStyled>
+      </div>
+      <div>
+        <label htmlFor="frameworks">Frameworks 1</label>
+        <SelectStyled name="frameworks">
+          <option value="django">Django</option>
+          <option value="springboot">Spring Boot</option>
+          <option value="react">React</option>
+          <option value="bootstrap">Bootstrap</option>
+        </SelectStyled>
+      </div>
+      <div>
+        <label htmlFor="frameworks">Frameworks 2</label>
+        <SelectStyled name="frameworks">
+          <option value="django">Django</option>
+          <option value="springboot">Spring Boot</option>
+          <option value="react">React</option>
+          <option value="bootstrap">Bootstrap</option>
+        </SelectStyled>
+      </div>
     </ContainerForm>
   );
 };
