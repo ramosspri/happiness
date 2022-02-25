@@ -13,6 +13,7 @@ declare module 'styled-components' {
       assets_green: string;
       assets_blue: string;
       border_grey: string;
+      background_modal: string;
     };
     borderRadius: {
       none: string;

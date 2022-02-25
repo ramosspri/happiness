@@ -8,6 +8,7 @@ export const themeDark = {
     assets_green: '#397F03',
     assets_blue: '#006E97',
     border_grey: '#B6B1B1',
+    background_modal: '#222222',
   },
   borderRadius: {
     none: '0',

@@ -8,6 +8,7 @@ export const themeLight = {
     assets_green: '#54BF00',
     assets_blue: '#00A4E1',
     border_grey: '#B6B1B1',
+    background_modal: '#222222',
   },
   borderRadius: {
     none: '0',
