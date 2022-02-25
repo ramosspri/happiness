@@ -1,17 +1,24 @@
 import React from 'react';
 import { ContainerBody } from '../ContainerBody/styles';
+import { TextHome, TextHomeBold } from './styles';
 
 const HomeCorpo = () => {
   return (
     <>
     <ContainerBody>
-      <p>Home</p>
+      <TextHome>#1</TextHome>
+      <TextHomeBold>Priscila</TextHomeBold>
+      <TextHome>priscila@gmail.com</TextHome>
     </ContainerBody>
     <ContainerBody>
-      <p>Home</p>
+      <TextHome>#2</TextHome>
+      <TextHomeBold>Carlos</TextHomeBold>
+      <TextHome>carlos@gmail.com</TextHome>
     </ContainerBody>
     <ContainerBody>
-      <p>Home</p>
+      <TextHome>#3</TextHome>
+      <TextHomeBold>Gustavo</TextHomeBold>
+      <TextHome>gustavo@gmail.com</TextHome>
     </ContainerBody>
   </>
   );
