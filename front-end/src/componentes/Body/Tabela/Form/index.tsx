@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button } from './Button';
 import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 // import { Container } from './styles';
 
@@ -60,6 +61,7 @@ const Form = () => {
           <option value="bootstrap">Bootstrap</option>
         </SelectStyled>
       </div>
+      <Button />
     </ContainerForm>
   );
 };
