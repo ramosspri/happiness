@@ -7,8 +7,8 @@ export const ContainerHeader = styled.header`
   grid-area: header;
   background-color: ${({ theme }) => theme.colors.primary};
   height: 4.9rem;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  border-bottom-right-radius: 0.625rem;
-  border-bottom-left-radius: 0.625rem;
+  box-shadow: 0rem 0.1875rem 0.25rem 0rem rgb(0 0 0 / 25%);
+  border-bottom-right-radius: 0.3125rem;
+  border-bottom-left-radius: 0.3125rem;
   margin-bottom: 2.625rem;
 `;
