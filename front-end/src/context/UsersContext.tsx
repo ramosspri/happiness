@@ -1,5 +1,5 @@
 import React from 'react';
-interface UsersType {
+export interface UsersType {
   id: string;
   name: string;
   email: string;
@@ -32,6 +32,7 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
     frameworks1: '',
     frameworks2: '',
   });
+
   return (
     <UsersContext.Provider value={{ input, setInput }}>
       {children}
@@ -42,10 +43,5 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
 // Essa função automatiza o processo de usar o contexto criado por mim.
 export function useCreateContext() {
   const context = React.useContext(UsersContext);
-
-  // if (!context) {
-  //   throw new Error('useUtils must be used within an UserProvider');
-  // }
-
   return context;
 }
