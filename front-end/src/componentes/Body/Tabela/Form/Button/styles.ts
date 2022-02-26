@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 
 export const ContainerButton = styled.div`
   display: flex;
@@ -7,6 +7,7 @@ export const ContainerButton = styled.div`
 `;
 
 export const ButtonRed = styled.button`
+  font-family: 'Roboto', sans-serif;
   color: #ffffff;
   background-color: ${({ theme }) => theme.colors.assets_red};
   height: 40px;
@@ -14,15 +15,16 @@ export const ButtonRed = styled.button`
   border-radius: 0.625rem;
   border: none;
   font-weight: ${({ theme }) => theme.font.weights.bold};
-
-  font-family: 'Roboto', sans-serif;
+  transition: all 0.2s ease-in-out;
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.85;
+    transform: scale(1.05);
   }
 `;
 
 export const ButtonBlue = styled.button`
+  font-family: 'Roboto', sans-serif;
   height: 40px;
   width: 100%;
   color: #ffffff;
@@ -30,9 +32,11 @@ export const ButtonBlue = styled.button`
   border-radius: 0.625rem;
   border: none;
   font-weight: ${({ theme }) => theme.font.weights.bold};
-  font-family: 'Roboto', sans-serif;
+  transition: all 0.2s ease-in-out;
+
   &:hover {
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.85;
+    transform: scale(1.05);
   }
 `;
