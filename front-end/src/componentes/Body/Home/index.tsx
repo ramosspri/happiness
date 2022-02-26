@@ -9,12 +9,10 @@ const HomeCorpo = () => {
   return (
     <>
     <ContainerBody>
-      <div>
       <ImgUsers src={Priscila}/>
       <TextHome>#1</TextHome>
       <TextHomeBold>Priscila</TextHomeBold>
       <TextHome>priscila@gmail.com</TextHome>
-      </div>
     </ContainerBody>
     <ContainerBody>
       <ImgUsers src={Carlos}/>
