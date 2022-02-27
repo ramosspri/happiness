@@ -1,13 +1,20 @@
 import React from 'react';
+
 export interface UsersType {
-  id: string;
-  name: string;
+  id: number | null;
+  nome: string;
   email: string;
-  telefone: string;
-  linguagem1: string;
-  linguagem2: string;
-  frameworks1: string;
-  frameworks2: string;
+  telefone: number | null;
+  stacks: [
+    {
+      language1: string;
+      framework1: string;
+    },
+    {
+      language2: string;
+      framework2: string;
+    },
+  ];
 }
 
 interface UserContextProperties {
@@ -23,14 +30,20 @@ export const UsersContext = React.createContext({} as UsersContextType);
 export const UsersProvider = ({ children }: UserContextProperties) => {
   const [users, setUsers] = React.useState();
   const [input, setInput] = React.useState<UsersType>({
-    id: '',
-    name: '',
+    id: null,
+    nome: '',
     email: '',
-    telefone: '',
-    linguagem1: '',
-    linguagem2: '',
-    frameworks1: '',
-    frameworks2: '',
+    telefone: null,
+    stacks: [
+      {
+        language1: '',
+        framework1: '',
+      },
+      {
+        language2: '',
+        framework2: '',
+      },
+    ],
   });
 
   return (
