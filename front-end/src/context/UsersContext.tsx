@@ -1,10 +1,10 @@
 import React from 'react';
 
 export interface UsersType {
-  id: number | null;
+  id: number;
   nome: string;
   email: string;
-  telefone: number | null;
+  telefone: number;
   stacks: [
     {
       language1: string;
@@ -17,33 +17,40 @@ export interface UsersType {
   ];
 }
 
+export interface InputType {
+  id: string;
+  nome: string;
+  email: string;
+  telefone: string;
+  language1: string;
+  framework1: string;
+  language2: string;
+  framework2: string;
+}
+
 interface UserContextProperties {
   children: React.ReactNode;
 }
 
 interface UsersContextType {
-  input: UsersType;
-  setInput: React.Dispatch<React.SetStateAction<UsersType>>;
+  input: InputType;
+  setInput: React.Dispatch<React.SetStateAction<InputType>>;
 }
 export const UsersContext = React.createContext({} as UsersContextType);
 
 export const UsersProvider = ({ children }: UserContextProperties) => {
   const [users, setUsers] = React.useState();
-  const [input, setInput] = React.useState<UsersType>({
-    id: null,
+  const [input, setInput] = React.useState<InputType>({
+    id: '',
     nome: '',
     email: '',
-    telefone: null,
-    stacks: [
-      {
-        language1: '',
-        framework1: '',
-      },
-      {
-        language2: '',
-        framework2: '',
-      },
-    ],
+    telefone: '',
+
+    language1: '',
+    framework1: '',
+
+    language2: '',
+    framework2: '',
   });
 
   return (

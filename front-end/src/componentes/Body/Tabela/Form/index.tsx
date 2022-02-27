@@ -1,23 +1,17 @@
 import React from 'react';
-import { JsxElement } from 'typescript';
-import { deleteUser, getUsers } from '../../../../api/api';
-import { useCreateContext, UsersType } from '../../../../context/UsersContext';
+import { addUser, deleteUser, getUsers } from '../../../../api/api';
+import {
+  InputType,
+  useCreateContext,
+  UsersType,
+} from '../../../../context/UsersContext';
 import { Button } from './Button';
 import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
-interface StackType1 {
-  language1: string;
-  framework1: string;
-}
-
-interface StackType2 {
-  language2: string;
-  framework2: string;
-}
 
 const Form = () => {
   const { input, setInput } = useCreateContext();
 
-  function handleId(id: number): void {
+  function handleId(id: string): void {
     setInput({ ...input, id });
   }
 
@@ -29,106 +23,96 @@ const Form = () => {
     setInput({ ...input, email });
   }
 
-  function handleTelefone(telefone: number): void {
+  function handleTelefone(telefone: string): void {
     setInput({ ...input, telefone });
   }
 
-  function handleLinguagens1(language: string): void {
-    let newInput = input.stacks.map((stack: any) => {
-      // console.log({ language1 });
-    });
+  function handleLinguagens1(language1: string): void {
+    setInput({ ...input, language1 });
   }
 
-  handleLinguagens1('oi');
+  function handleLinguagens2(language2: string): void {
+    setInput({ ...input, language2 });
+  }
+  function handleFrameworks1(framework1: string): void {
+    setInput({ ...input, framework1 });
+  }
+  function handleFrameworks2(framework2: string): void {
+    setInput({ ...input, framework2 });
+  }
 
-  // function handleLinguagens2(language2: string): void {
-  //   setInput({ ...input, language2 });
-  // }
-  // function handleFrameworks1(framework1: string): void {
-  //   setInput({ ...input, framework1 });
-  // }
-  // function handleFrameworks2(frameworks2: string): void {
-  //   setInput({ ...input, frameworks2 });
-  // }
-
-  function validacaoFormulario(input: UsersType): boolean {
+  function validacaoFormulario(input: InputType): boolean {
     const regexNumero = /^[0-9\b]+$/;
     const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i;
     const regexTelefone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
 
-    // if (input.id === '') {
-    //   console.log('O ID está vazio.');
-    //   return false;
-    // }
+    if (input.id === '') {
+      console.log('O ID está vazio.');
+      return false;
+    }
 
-    // if (input.name === '') {
-    //   console.log('O nome está vazio.');
-    //   return false;
-    // }
+    if (input.nome === '') {
+      console.log('O nome está vazio.');
+      return false;
+    }
 
-    // if (input.email === '') {
-    //   console.log('O e-mail está vazio.');
-    //   return false;
-    // }
+    if (input.email === '') {
+      console.log('O e-mail está vazio.');
+      return false;
+    }
 
-    // if (input.telefone === '') {
-    //   console.log('O telefone está vazio.');
-    //   return false;
-    // }
+    if (input.telefone === '') {
+      console.log('O telefone está vazio.');
+      return false;
+    }
 
-    // if (input.linguagem1 === '') {
-    //   console.log('A linguagem 1 está vazia.');
-    //   return false;
-    // }
+    if (input.language1 === '') {
+      console.log('A linguagem 1 está vazia.');
+      return false;
+    }
 
-    // if (input.linguagem2 === '') {
-    //   console.log('A linguagem 2 está vazia.');
-    //   return false;
-    // }
+    if (input.language2 === '') {
+      console.log('A linguagem 2 está vazia.');
+      return false;
+    }
 
-    // if (input.frameworks1 === '') {
-    //   console.log('O framework 1 está vazio.');
-    //   return false;
-    // }
+    if (input.framework1 === '') {
+      console.log('O framework 1 está vazio.');
+      return false;
+    }
 
-    // if (input.frameworks2 === '') {
-    //   console.log('O framework 2 está vazio.');
-    //   return false;
-    // }
+    if (input.framework2 === '') {
+      console.log('O framework 2 está vazio.');
+      return false;
+    }
 
-    // if (!regexNumero.test(input.id)) {
-    //   console.log('Digite um ID válido.');
-    //   return false;
-    // }
+    if (!regexNumero.test(input.id)) {
+      console.log('Digite um ID válido.');
+      return false;
+    }
 
-    // if (!regexEmail.test(input.email)) {
-    //   console.log('Digite um E-mail válido.');
-    //   return false;
-    // }
+    if (!regexEmail.test(input.email)) {
+      console.log('Digite um E-mail válido.');
+      return false;
+    }
 
-    // if (!regexTelefone.test(input.telefone)) {
-    //   console.log('Digite um Telefone válido.');
-    //   return false;
-    // }
+    if (!regexTelefone.test(input.telefone)) {
+      console.log('Digite um Telefone válido.');
+      return false;
+    }
 
     return true;
   }
   function handleCancel() {
     setInput({
-      id: null,
+      id: '',
       nome: '',
       email: '',
-      telefone: null,
-      stacks: [
-        {
-          language1: '',
-          framework1: '',
-        },
-        {
-          language2: '',
-          framework2: '',
-        },
-      ],
+      telefone: '',
+      language1: '',
+      framework1: '',
+      language2: '',
+      framework2: '',
     });
   }
 
@@ -136,18 +120,34 @@ const Form = () => {
     event.preventDefault();
 
     let valida = validacaoFormulario(input);
-    console.log(input);
+    if (valida) {
+      const user: UsersType = {
+        id: +input.id,
+        nome: input.nome,
+        email: input.telefone,
+        telefone: +input.telefone,
+        stacks: [
+          {
+            language1: input.language1,
+            framework1: input.framework1,
+          },
+          {
+            language2: input.language2,
+            framework2: input.framework2,
+          },
+        ],
+      };
+      addUser(user);
+    }
   }
-
-  getUsers();
 
   return (
     <ContainerForm onSubmit={handleSubmit}>
       <BlocoInput>
         <label htmlFor="id">ID</label>
         <InputStyled
-          // value={input.id}
-          // onChange={(e) => handleId(e.target.value)}
+          value={input.id}
+          onChange={(e) => handleId(e.target.value)}
           type="text"
           name="id"
         />
@@ -156,7 +156,7 @@ const Form = () => {
       <BlocoInput>
         <label htmlFor="nome">Nome</label>
         <InputStyled
-          // value={input.name}
+          value={input.nome}
           onChange={(e) => handleNome(e.target.value)}
           type="text"
           name="nome"
@@ -176,8 +176,8 @@ const Form = () => {
       <BlocoInput>
         <label htmlFor="telefone">Telefone</label>
         <InputStyled
-          // value={input.telefone}
-          // onChange={(e) => handleTelefone(e.target.value)}
+          value={input.telefone}
+          onChange={(e) => handleTelefone(e.target.value)}
           type="text"
           name="telefone"
         />
@@ -185,7 +185,7 @@ const Form = () => {
       <div>
         <label htmlFor="linguagens">Linguagens 1</label>
         <SelectStyled
-          // value={input.linguagem1}
+          value={input.language1}
           onChange={(e) => handleLinguagens1(e.target.value)}
           name="linguagens"
         >
@@ -200,8 +200,8 @@ const Form = () => {
       <div>
         <label htmlFor="linguagens">Linguagens 2</label>
         <SelectStyled
-          // value={input.linguagem2}
-          // onChange={(e) => handleLinguagens2(e.target.value)}
+          value={input.language2}
+          onChange={(e) => handleLinguagens2(e.target.value)}
           name="linguagens"
         >
           <option value="none"></option>
@@ -215,8 +215,8 @@ const Form = () => {
       <div>
         <label htmlFor="frameworks">Frameworks 1</label>
         <SelectStyled
-          // value={input.frameworks1}
-          // onChange={(e) => handleFrameworks1(e.target.value)}
+          value={input.framework1}
+          onChange={(e) => handleFrameworks1(e.target.value)}
           name="frameworks"
         >
           <option value="none"></option>
@@ -230,8 +230,8 @@ const Form = () => {
       <div>
         <label htmlFor="frameworks">Frameworks 2</label>
         <SelectStyled
-          // value={input.frameworks2}
-          // onChange={(e) => handleFrameworks2(e.target.value)}
+          value={input.framework2}
+          onChange={(e) => handleFrameworks2(e.target.value)}
           name="frameworks"
         >
           <option value="none"></option>

@@ -12,10 +12,17 @@ export async function getUsers() {
 
 export async function deleteUser(id: string) {
   const response = await client.delete(`${id}`);
-  console.log(response);
 }
 
 export async function addUser(input: UsersType) {
-  const response = await client.post('', input);
-  console.log(response);
+  const response = await client.post(
+    '',
+    { input },
+
+    {
+      headers: {
+        Accept: 'application/json',
+      },
+    },
+  );
 }
