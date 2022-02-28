@@ -1,7 +1,6 @@
 import React from 'react';
 
 export interface UsersType {
-  id: number;
   nome: string;
   email: string;
   telefone: number;
@@ -18,7 +17,6 @@ export interface UsersType {
 }
 
 export interface InputType {
-  id: string;
   nome: string;
   email: string;
   telefone: string;
@@ -41,7 +39,6 @@ export const UsersContext = React.createContext({} as UsersContextType);
 export const UsersProvider = ({ children }: UserContextProperties) => {
   const [users, setUsers] = React.useState();
   const [input, setInput] = React.useState<InputType>({
-    id: '',
     nome: '',
     email: '',
     telefone: '',

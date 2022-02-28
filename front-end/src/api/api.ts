@@ -14,11 +14,21 @@ export async function deleteUser(id: string) {
   const response = await client.delete(`${id}`);
 }
 
-export async function addUser(input: UsersType) {
+export async function addUser(user: UsersType) {
   const response = await client.post(
     '',
-    { input },
-
+    { user },
+    {
+      headers: {
+        Accept: 'application/json',
+      },
+    },
+  );
+}
+export async function updateUser(id: string, user: UsersType) {
+  const response = await client.put(
+    `/$id}`,
+    { user },
     {
       headers: {
         Accept: 'application/json',

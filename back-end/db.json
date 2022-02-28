@@ -1,24 +1,54 @@
-{ 
+{
   "users": [
     {
-      "id": 4,
-      "name": "Tony Silva",
-      "email": "tony@mail.com"
+      "id": 1,
+      "nome": "Tony",
+      "email": "tony@mail.com",
+      "telefone": 999999,
+      "stacks": [
+        {
+          "language": "Java Script",
+          "Framework": "VueJS"
+        },
+        {
+          "language": "Node",
+          "Framework": "NestJS"
+        }
+      ]
     },
     {
-      "id": 5,
-      "name": "User Um Edited",
-      "email": "user@mail.com"
+      "id": 2,
+      "nome": "Frank",
+      "email": "frank@mail.com",
+      "telefone": 999999,
+      "stacks": [
+        {
+          "language": "Java",
+          "Framework": "Spring Boot"
+        },
+        {
+          "language": "Pyton",
+          "Framework": "Django"
+        }
+      ]
     },
     {
-      "id": 6,
-      "name": "User Dois",
-      "email": "dois@mail.com"
-    },
-    {
-      "id": 7,
-      "name": "User Tres",
-      "email": "tres@mail.com"
+      "user": {
+        "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
+        "email": "64984313656",
+        "telefone": 64984313656,
+        "stacks": [
+          {
+            "language1": "typescript",
+            "framework1": "bootstrap"
+          },
+          {
+            "language2": "python",
+            "framework2": "react"
+          }
+        ]
+      },
+      "id": 3
     }
   ]
 }
