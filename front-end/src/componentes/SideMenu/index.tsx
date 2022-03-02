@@ -1,11 +1,11 @@
 import React from 'react';
-import { DivMenu, LinkDecoration, LinkSpaces, Line } from './styles';
+import { DivMenu, LinkDecoration, LinkSpaces, Line, MenuText } from './styles';
 import { FaHome, FaPeopleArrows } from "react-icons/fa";
 
 export const SideMenu = ({ mostra }: any) => {
   return (
     <DivMenu className={mostra}>
-      <p>Menu</p>
+      <MenuText className='hide1'>Menu</MenuText>
       <LinkSpaces>
       <Line/>
       <FaHome style={{marginRight: '3px'}}/>
