@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
+import { getUsers } from '../api/api';
 import { useModal } from '../componentes/Modal';
-
+import axios from 'axios';
 export interface UsersType {
+  id: number | null;
   nome: string;
   email: string;
   telefone: number;
@@ -37,7 +39,8 @@ interface UsersContextType {
   mostra: boolean;
   toggle: () => void;
   users: UsersType[];
-  setUsers: React.Dispatch<React.SetStateAction<never[]>>;
+  mudanca: boolean;
+  setMudanca: Dispatch<SetStateAction<boolean>>;
 }
 
 export const UsersContext = React.createContext({} as UsersContextType);
@@ -56,10 +59,26 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
     framework2: '',
   });
   const { mostra, toggle } = useModal();
+  const [mudanca, setMudanca] = React.useState(false);
+
+  const handleSetUsers = React.useCallback((data) => {
+    setUsers(data);
+  }, []);
+
+  const getUsers = async () => {
+    const { data } = await axios.get('http://localhost:3001/users');
+    setUsers(data);
+    handleSetUsers(data);
+    setMudanca(false);
+  };
+
+  React.useEffect(() => {
+    getUsers();
+  }, [mudanca]);
 
   return (
     <UsersContext.Provider
-      value={{ input, setInput, mostra, toggle, users, setUsers }}
+      value={{ input, setInput, mostra, toggle, users, mudanca, setMudanca }}
     >
       {children}
     </UsersContext.Provider>

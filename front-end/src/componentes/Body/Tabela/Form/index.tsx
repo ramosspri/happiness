@@ -1,4 +1,5 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import { addUser, deleteUser, getUsers } from '../../../../api/api';
 import {
   InputType,
@@ -9,8 +10,7 @@ import { Button } from './Button';
 import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 
 const Form = () => {
-  const { input, setInput } = useCreateContext();
-  const { mostra, setUsers } = useCreateContext();
+  const { input, setInput, mostra, mudanca, setMudanca } = useCreateContext();
 
   function handleNome(nome: string): void {
     setInput({ ...input, nome });
@@ -43,47 +43,47 @@ const Form = () => {
     const regexTelefone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
 
     if (input.nome === '') {
-      console.log('O nome está vazio.');
+      toast.error('O nome está vazio');
       return false;
     }
 
     if (input.email === '') {
-      console.log('O e-mail está vazio.');
+      toast.error('O e-mail está vazio.');
       return false;
     }
 
     if (input.telefone === '') {
-      console.log('O telefone está vazio.');
+      toast.error('O telefone está vazio.');
       return false;
     }
 
     if (input.language1 === '') {
-      console.log('A linguagem 1 está vazia.');
+      toast.error('A linguagem 1 está vazia.');
       return false;
     }
 
     if (input.language2 === '') {
-      console.log('A linguagem 2 está vazia.');
+      toast.error('A linguagem 2 está vazia.');
       return false;
     }
 
     if (input.framework1 === '') {
-      console.log('O framework 1 está vazio.');
+      toast.error('O framework 1 está vazio.');
       return false;
     }
 
     if (input.framework2 === '') {
-      console.log('O framework 2 está vazio.');
+      toast.error('O framework 2 está vazio.');
       return false;
     }
 
     if (!regexEmail.test(input.email)) {
-      console.log('Digite um E-mail válido.');
+      toast.error('Digite um E-mail válido.');
       return false;
     }
 
     if (!regexTelefone.test(input.telefone)) {
-      console.log('Digite um Telefone válido.');
+      toast.error('Digite um Telefone válido.');
       return false;
     }
 
@@ -106,8 +106,8 @@ const Form = () => {
 
     let valida = validacaoFormulario(input);
     if (valida) {
-      console.log(input);
       const user: UsersType = {
+        id: null,
         nome: input.nome,
         email: input.email,
         telefone: +input.telefone,
@@ -123,8 +123,10 @@ const Form = () => {
         ],
       };
       addUser(user);
-      console.log('Usuário adicionado com sucesso.');
+      toast.success('Usuário adicionado com sucesso.');
+      handleCancel();
     }
+    setMudanca(true);
   }
   return (
     <ContainerForm onSubmit={handleSubmit}>
