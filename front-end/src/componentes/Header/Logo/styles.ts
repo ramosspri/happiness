@@ -6,5 +6,4 @@ export const ImgLogo = styled.img`
   justify-content: start;
   width: 100px;
   height: 90px;
-  border: solid 1px black;
 `;
