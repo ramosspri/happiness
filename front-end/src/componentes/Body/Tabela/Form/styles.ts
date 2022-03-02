@@ -5,6 +5,9 @@ export const ContainerForm = styled.form`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  @media (min-width: 800px) {
+    gap: 0.5rem;
+  }
 `;
 
 export const InputStyled = styled.input`

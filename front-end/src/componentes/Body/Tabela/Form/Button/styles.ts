@@ -4,6 +4,7 @@ export const ContainerButton = styled.div`
   display: flex;
   gap: 0.9375rem;
   grid-column: 2/3;
+  margin-top: 0.5rem;
 `;
 
 export const ButtonRed = styled.button`

@@ -10,6 +10,7 @@ import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 
 const Form = () => {
   const { input, setInput } = useCreateContext();
+  const { mostra } = useCreateContext();
 
   function handleNome(nome: string): void {
     setInput({ ...input, nome });
@@ -127,15 +128,12 @@ const Form = () => {
 
   return (
     <ContainerForm onSubmit={handleSubmit}>
-      {/* <BlocoInput>
-        <label htmlFor="id">ID</label>
-        <InputStyled
-          value={input.id}
-          onChange={(e) => handleId(e.target.value)}
-          type="text"
-          name="id"
-        />
-      </BlocoInput> */}
+      {mostra && (
+        <BlocoInput>
+          <label htmlFor="id">ID</label>
+          <InputStyled type="text" name="id" />
+        </BlocoInput>
+      )}
 
       <BlocoInput>
         <label htmlFor="nome">Nome</label>

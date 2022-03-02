@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCreateContext } from '../../context/UsersContext';
 import { ContainerBody } from '../Body/ContainerBody/styles';
 import { Cadastro } from '../Body/Tabela/Cadastro';
 import { BackgroundModal, ConteinerModal, HeaderModal } from './styles';
@@ -21,12 +22,13 @@ export const useModal = () => {
 };
 
 export const Modal = () => {
+  const { toggle } = useCreateContext();
   return (
     <>
-      <BackgroundModal />
+      <BackgroundModal onClick={toggle} />
       <ConteinerModal>
         <ContainerBody>
-          <HeaderModal>X</HeaderModal>
+          <HeaderModal onClick={toggle}>X</HeaderModal>
           <Cadastro />
         </ContainerBody>
       </ConteinerModal>
