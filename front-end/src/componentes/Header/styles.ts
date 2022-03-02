@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ContainerHeader = styled.header`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-around;
   align-items: center;
   grid-area: header;
   background-color: ${({ theme }) => theme.colors.primary};
@@ -12,8 +12,3 @@ export const ContainerHeader = styled.header`
   border-bottom-left-radius: 0.3125rem;
   margin-bottom: 2.625rem;
 `;
-
-export const DivMenu = styled.div`
-  display: flex;
-  justify-content: space-between;
-`

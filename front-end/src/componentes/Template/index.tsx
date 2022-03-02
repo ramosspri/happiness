@@ -5,17 +5,21 @@ import Header from '../Header';
 import { MyRoute } from '../../Routes';
 import { Grid } from './styles';
 import { Modal } from '../Modal';
+import { SideMenu } from '../SideMenu';
 // import { Container } from './styles';
 
 const Template = () => {
   return (
-    <BrowserRouter>
-      <Grid>
-        <Header />
-        <Footer />
-        <MyRoute />
-      </Grid>
-    </BrowserRouter>
+    <>
+      <BrowserRouter>
+        <Grid>
+          <Header />
+          {/* <SideMenu /> */}
+          <Footer />
+          <MyRoute />
+        </Grid>
+      </BrowserRouter>
+    </>
     // <Modal />
   );
 };

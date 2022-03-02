@@ -1,14 +1,16 @@
 import React from 'react';
-import { Logo } from './Logo';
-import { ContainerHeader, DivMenu, } from './styles';
 import { SideMenu } from '../SideMenu';
+import { Logo } from './Logo';
+import { ContainerHeader } from './styles';
 
 const Header = () => {
+  const [showMenu, setShowMenu] = React.useState(true);
+  React.useLayoutEffect(() => {
+    window.screen.availWidth <= 800 ? setShowMenu(true) : setShowMenu(false);
+  }, []);
   return (
     <ContainerHeader>
-      <DivMenu>
-          <SideMenu />
-      </DivMenu>
+      {showMenu && <SideMenu />}
       <Logo />
     </ContainerHeader>
   );
