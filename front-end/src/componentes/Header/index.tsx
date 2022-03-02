@@ -7,7 +7,7 @@ import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 const Header = () => {
   return (
     <ContainerHeader>
-      <FaToggleOff size="1.25rem" color="grey" style={{position:'absolute', right:'30px'}}/>
+      <FaToggleOff size="1.25rem" color="#444444" style={{position:'absolute', right:'30px'}}/>
       {/* <FaToggleOn/> */}
       <SideMenu mostra={'hide2'} />
       <Logo />
