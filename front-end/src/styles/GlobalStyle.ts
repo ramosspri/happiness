@@ -55,4 +55,20 @@ export const GlobalStyle = createGlobalStyle`
         display:block;
         font-size:1.125rem;
     }
+    .hide1 {
+      display:none;
+    }
+    .hide2 {
+      display:flex;
+    }
+    @media (min-width:800px) {
+      .hide1 {
+      display:block;
+    }
+     .hide2 {
+
+      display:none;
+    }
+    }
+
 `;

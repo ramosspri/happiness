@@ -1,14 +1,12 @@
 import React from 'react';
-import { Logo } from './Logo';
-import { ContainerHeader, DivMenu, } from './styles';
 import { SideMenu } from '../SideMenu';
+import { Logo } from './Logo';
+import { ContainerHeader } from './styles';
 
 const Header = () => {
   return (
     <ContainerHeader>
-      <DivMenu>
-          <SideMenu />
-      </DivMenu>
+      <SideMenu mostra={'hide2'} />
       <Logo />
     </ContainerHeader>
   );

@@ -1,7 +1,7 @@
 import React from 'react';
+import { useModal } from '../componentes/Modal';
 
 export interface UsersType {
-  id: number;
   nome: string;
   email: string;
   telefone: number;
@@ -18,7 +18,6 @@ export interface UsersType {
 }
 
 export interface InputType {
-  id: string;
   nome: string;
   email: string;
   telefone: string;
@@ -35,13 +34,14 @@ interface UserContextProperties {
 interface UsersContextType {
   input: InputType;
   setInput: React.Dispatch<React.SetStateAction<InputType>>;
+  mostra: boolean;
+  toggle: () => void;
 }
 export const UsersContext = React.createContext({} as UsersContextType);
 
 export const UsersProvider = ({ children }: UserContextProperties) => {
   const [users, setUsers] = React.useState();
   const [input, setInput] = React.useState<InputType>({
-    id: '',
     nome: '',
     email: '',
     telefone: '',
@@ -52,9 +52,10 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
     language2: '',
     framework2: '',
   });
+  const { mostra, toggle } = useModal();
 
   return (
-    <UsersContext.Provider value={{ input, setInput }}>
+    <UsersContext.Provider value={{ input, setInput, mostra, toggle }}>
       {children}
     </UsersContext.Provider>
   );

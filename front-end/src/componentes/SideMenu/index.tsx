@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import {LinkDecoration, LinkSpaces} from './styles'
+import { DivMenu, LinkDecoration, LinkSpaces } from './styles';
 
-export const SideMenu = () => {
+export const SideMenu = ({ mostra }: any) => {
+  console.log(window.screen.availWidth);
   return (
-    <>
-    <LinkSpaces>
-      <LinkDecoration to="/">Home</LinkDecoration>
-    </LinkSpaces>
-    <LinkSpaces>
-      <LinkDecoration to="/tabela">Tabela</LinkDecoration>
-    </LinkSpaces>
-    </>
+    <DivMenu className={mostra}>
+      <LinkSpaces>
+        <LinkDecoration to="/">Home</LinkDecoration>
+      </LinkSpaces>
+      <LinkSpaces>
+        <LinkDecoration to="/tabela">Tabela</LinkDecoration>
+      </LinkSpaces>
+    </DivMenu>
   );
 };

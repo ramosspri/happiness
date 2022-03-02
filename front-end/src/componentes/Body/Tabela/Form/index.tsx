@@ -10,10 +10,7 @@ import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 
 const Form = () => {
   const { input, setInput } = useCreateContext();
-
-  function handleId(id: string): void {
-    setInput({ ...input, id });
-  }
+  const { mostra } = useCreateContext();
 
   function handleNome(nome: string): void {
     setInput({ ...input, nome });
@@ -42,14 +39,8 @@ const Form = () => {
   }
 
   function validacaoFormulario(input: InputType): boolean {
-    const regexNumero = /^[0-9\b]+$/;
     const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i;
     const regexTelefone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
-
-    if (input.id === '') {
-      console.log('O ID está vazio.');
-      return false;
-    }
 
     if (input.nome === '') {
       console.log('O nome está vazio.');
@@ -86,11 +77,6 @@ const Form = () => {
       return false;
     }
 
-    if (!regexNumero.test(input.id)) {
-      console.log('Digite um ID válido.');
-      return false;
-    }
-
     if (!regexEmail.test(input.email)) {
       console.log('Digite um E-mail válido.');
       return false;
@@ -105,7 +91,6 @@ const Form = () => {
   }
   function handleCancel() {
     setInput({
-      id: '',
       nome: '',
       email: '',
       telefone: '',
@@ -122,7 +107,6 @@ const Form = () => {
     let valida = validacaoFormulario(input);
     if (valida) {
       const user: UsersType = {
-        id: +input.id,
         nome: input.nome,
         email: input.telefone,
         telefone: +input.telefone,
@@ -137,21 +121,19 @@ const Form = () => {
           },
         ],
       };
+      console.log('Usuário adicionado com sucesso.');
       addUser(user);
     }
   }
 
   return (
     <ContainerForm onSubmit={handleSubmit}>
-      <BlocoInput>
-        <label htmlFor="id">ID</label>
-        <InputStyled
-          value={input.id}
-          onChange={(e) => handleId(e.target.value)}
-          type="text"
-          name="id"
-        />
-      </BlocoInput>
+      {mostra && (
+        <BlocoInput>
+          <label htmlFor="id">ID</label>
+          <InputStyled type="text" name="id" />
+        </BlocoInput>
+      )}
 
       <BlocoInput>
         <label htmlFor="nome">Nome</label>
