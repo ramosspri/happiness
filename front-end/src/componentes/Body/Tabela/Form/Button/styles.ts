@@ -3,8 +3,12 @@ import styled, { keyframes } from 'styled-components';
 export const ContainerButton = styled.div`
   display: flex;
   gap: 0.9375rem;
-  grid-column: 2/3;
+  grid-column: 1/3;
   margin-top: 0.5rem;
+  @media (min-width: 50rem) {
+    grid-column: 5/7;
+    margin-top: 0;
+  }
 `;
 
 export const ButtonRed = styled.button`

@@ -7,6 +7,8 @@ export const ContainerForm = styled.form`
   gap: 1rem;
   @media (min-width: 800px) {
     gap: 0.5rem;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    align-items: end;
   }
 `;
 
@@ -21,13 +23,46 @@ export const InputStyled = styled.input`
   font-size: 18px;
 `;
 
-export const BlocoInput = styled.div`
+export const BlocoId = styled.div`
   grid-column: 1/3;
+  @media (min-width: 800px) {
+    grid-column: 1/2;
+  }
 `;
 
+export const BlocoNome = styled.div`
+  grid-column: 1/3;
+  @media (min-width: 800px) {
+    grid-column: 1/4;
+  }
+`;
+
+export const BlocoEmail = styled.div`
+  grid-column: 1/3;
+  @media (min-width: 800px) {
+    grid-column: 4/7;
+  }
+`;
+export const BlocoTelefone = styled.div`
+  grid-column: 1/3;
+  @media (min-width: 800px) {
+    grid-column: 1/4;
+  }
+`;
 export const SelectStyled = styled.select`
   margin-top: 0.3125rem;
   width: 100%;
   height: 2.1875rem;
   color: ${({ theme }) => theme.colors.letter_color};
+`;
+
+export const ContainerSelectLanguage = styled.div`
+  @media (min-width: 50rem) {
+    grid-column: span(2);
+  }
+`;
+export const ContainerSelectFrameWork = styled.div`
+  @media (min-width: 50rem) {
+    grid-column: span(2);
+  }
 `;

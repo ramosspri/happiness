@@ -7,7 +7,17 @@ import {
   UsersType,
 } from '../../../../context/UsersContext';
 import { Button } from './Button';
-import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
+import {
+  ContainerForm,
+  InputStyled,
+  SelectStyled,
+  BlocoId,
+  BlocoNome,
+  BlocoEmail,
+  BlocoTelefone,
+  ContainerSelectLanguage,
+  ContainerSelectFrameWork,
+} from './styles';
 
 const Form = () => {
   const { input, setInput, mostra, mudanca, setMudanca } = useCreateContext();
@@ -131,13 +141,13 @@ const Form = () => {
   return (
     <ContainerForm onSubmit={handleSubmit}>
       {mostra && (
-        <BlocoInput>
+        <BlocoId>
           <label htmlFor="id">ID</label>
           <InputStyled type="text" name="id" />
-        </BlocoInput>
+        </BlocoId>
       )}
 
-      <BlocoInput>
+      <BlocoNome>
         <label htmlFor="nome">Nome</label>
         <InputStyled
           value={input.nome}
@@ -145,9 +155,9 @@ const Form = () => {
           type="text"
           name="nome"
         />
-      </BlocoInput>
+      </BlocoNome>
 
-      <BlocoInput>
+      <BlocoEmail>
         <label htmlFor="email">E-mail</label>
         <InputStyled
           value={input.email}
@@ -155,9 +165,9 @@ const Form = () => {
           type="text"
           name="email"
         />
-      </BlocoInput>
+      </BlocoEmail>
 
-      <BlocoInput>
+      <BlocoTelefone>
         <label htmlFor="telefone">Telefone</label>
         <InputStyled
           value={input.telefone}
@@ -165,8 +175,8 @@ const Form = () => {
           type="text"
           name="telefone"
         />
-      </BlocoInput>
-      <div>
+      </BlocoTelefone>
+      <ContainerSelectLanguage>
         <label htmlFor="linguagens">Linguagens 1</label>
         <SelectStyled
           value={input.language1}
@@ -179,9 +189,9 @@ const Form = () => {
           <option value="typescript">Typescript</option>
           <option value="javascript">Javascript</option>
         </SelectStyled>
-      </div>
+      </ContainerSelectLanguage>
 
-      <div>
+      <ContainerSelectLanguage>
         <label htmlFor="linguagens">Linguagens 2</label>
         <SelectStyled
           value={input.language2}
@@ -194,9 +204,8 @@ const Form = () => {
           <option value="typescript">Typescript</option>
           <option value="javascript">Javascript</option>
         </SelectStyled>
-      </div>
-
-      <div>
+      </ContainerSelectLanguage>
+      <ContainerSelectFrameWork>
         <label htmlFor="frameworks">Frameworks 1</label>
         <SelectStyled
           value={input.framework1}
@@ -209,9 +218,9 @@ const Form = () => {
           <option value="react">React</option>
           <option value="bootstrap">Bootstrap</option>
         </SelectStyled>
-      </div>
+      </ContainerSelectFrameWork>
 
-      <div>
+      <ContainerSelectFrameWork>
         <label htmlFor="frameworks">Frameworks 2</label>
         <SelectStyled
           value={input.framework2}
@@ -224,8 +233,7 @@ const Form = () => {
           <option value="react">React</option>
           <option value="bootstrap">Bootstrap</option>
         </SelectStyled>
-      </div>
-
+      </ContainerSelectFrameWork>
       <Button handleCancel={handleCancel} />
     </ContainerForm>
   );
