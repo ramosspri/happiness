@@ -36,11 +36,14 @@ interface UsersContextType {
   setInput: React.Dispatch<React.SetStateAction<InputType>>;
   mostra: boolean;
   toggle: () => void;
+  users: UsersType[];
+  setUsers: React.Dispatch<React.SetStateAction<never[]>>;
 }
+
 export const UsersContext = React.createContext({} as UsersContextType);
 
 export const UsersProvider = ({ children }: UserContextProperties) => {
-  const [users, setUsers] = React.useState();
+  const [users, setUsers] = React.useState([]);
   const [input, setInput] = React.useState<InputType>({
     nome: '',
     email: '',
@@ -55,7 +58,9 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   const { mostra, toggle } = useModal();
 
   return (
-    <UsersContext.Provider value={{ input, setInput, mostra, toggle }}>
+    <UsersContext.Provider
+      value={{ input, setInput, mostra, toggle, users, setUsers }}
+    >
       {children}
     </UsersContext.Provider>
   );
