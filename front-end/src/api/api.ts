@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { UsersType } from '../context/UsersContext';
+import { useCreateContext, UsersType } from '../context/UsersContext';
 
 const client = axios.create({
   baseURL: 'http://localhost:3001/users',
@@ -8,6 +8,8 @@ const client = axios.create({
 
 export async function getUsers() {
   const { data } = await client.get('');
+
+  return data;
 }
 
 export async function deleteUser(id: string) {
@@ -25,9 +27,10 @@ export async function addUser(user: UsersType) {
     },
   );
 }
+
 export async function updateUser(id: string, user: UsersType) {
   const response = await client.put(
-    `/$id}`,
+    `/${id}`,
     { user },
     {
       headers: {

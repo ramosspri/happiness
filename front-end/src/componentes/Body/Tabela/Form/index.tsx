@@ -10,7 +10,7 @@ import { ContainerForm, InputStyled, BlocoInput, SelectStyled } from './styles';
 
 const Form = () => {
   const { input, setInput } = useCreateContext();
-  const { mostra } = useCreateContext();
+  const { mostra, setUsers } = useCreateContext();
 
   function handleNome(nome: string): void {
     setInput({ ...input, nome });
@@ -106,9 +106,10 @@ const Form = () => {
 
     let valida = validacaoFormulario(input);
     if (valida) {
+      console.log(input);
       const user: UsersType = {
         nome: input.nome,
-        email: input.telefone,
+        email: input.email,
         telefone: +input.telefone,
         stacks: [
           {
@@ -121,11 +122,10 @@ const Form = () => {
           },
         ],
       };
-      console.log('Usuário adicionado com sucesso.');
       addUser(user);
+      console.log('Usuário adicionado com sucesso.');
     }
   }
-
   return (
     <ContainerForm onSubmit={handleSubmit}>
       {mostra && (
