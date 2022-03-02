@@ -2,8 +2,7 @@ import styled from 'styled-components';
 
 export const ImgLogo = styled.img`
   grid-area: logo;
-  display: flex;
   justify-content: start;
-  width: 100px;
-  height: 90px;
+  width: 8.75rem;
+  height: 8.125rem;
 `;

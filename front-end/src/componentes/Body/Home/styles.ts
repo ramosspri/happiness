@@ -16,5 +16,3 @@ export const ImgUsers = styled.img`
   height: 5rem;
   border-radius: 2.5rem;
 `;
-
-
