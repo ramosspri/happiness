@@ -25,10 +25,8 @@ export const LinkSpaces = styled.div`
   }
 `;
 export const DivMenu = styled.div`
-  display: flex;
   justify-content: space-between;
   grid-area: sidemenu;
-
   @media (min-width: 800px) {
     flex-direction: column;
     justify-content: flex-start;

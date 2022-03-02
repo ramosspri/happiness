@@ -14,7 +14,7 @@ const Template = () => {
       <BrowserRouter>
         <Grid>
           <Header />
-          {/* <SideMenu /> */}
+          <SideMenu mostra="hide1" />
           <Footer />
           <MyRoute />
         </Grid>

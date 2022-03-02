@@ -4,13 +4,9 @@ import { Logo } from './Logo';
 import { ContainerHeader } from './styles';
 
 const Header = () => {
-  const [showMenu, setShowMenu] = React.useState(true);
-  React.useLayoutEffect(() => {
-    window.screen.availWidth <= 800 ? setShowMenu(true) : setShowMenu(false);
-  }, []);
   return (
     <ContainerHeader>
-      {showMenu && <SideMenu />}
+      <SideMenu mostra={'hide2'} />
       <Logo />
     </ContainerHeader>
   );

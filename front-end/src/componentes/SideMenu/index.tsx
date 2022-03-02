@@ -1,10 +1,10 @@
 import React from 'react';
 import { DivMenu, LinkDecoration, LinkSpaces } from './styles';
 
-export const SideMenu = () => {
+export const SideMenu = ({ mostra }: any) => {
   console.log(window.screen.availWidth);
   return (
-    <DivMenu>
+    <DivMenu className={mostra}>
       <LinkSpaces>
         <LinkDecoration to="/">Home</LinkDecoration>
       </LinkSpaces>
