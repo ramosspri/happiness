@@ -11,7 +11,9 @@ export const Button = ({ handleCancel }: UserCancel) => {
 
   return (
     <ContainerButton>
-      <ButtonRed onClick={handleCancel}>Cancelar</ButtonRed>
+      <ButtonRed type="reset" onClick={handleCancel}>
+        Cancelar
+      </ButtonRed>
       <ButtonBlue>{mostra ? 'Atualizar' : 'Salvar'}</ButtonBlue>
     </ContainerButton>
   );
