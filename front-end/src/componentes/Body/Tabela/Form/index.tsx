@@ -129,12 +129,12 @@ const Form = () => {
           telefone: +input.telefone,
           stacks: [
             {
-              language1: input.language1,
-              framework1: input.framework1,
+              language: input.language1,
+              framework: input.framework1,
             },
             {
-              language2: input.language2,
-              framework2: input.framework2,
+              language: input.language2,
+              framework: input.framework2,
             },
           ],
         };
@@ -148,12 +148,12 @@ const Form = () => {
           telefone: +input.telefone,
           stacks: [
             {
-              language1: input.language1,
-              framework1: input.framework1,
+              language: input.language1,
+              framework: input.framework1,
             },
             {
-              language2: input.language2,
-              framework2: input.framework2,
+              language: input.language2,
+              framework: input.framework2,
             },
           ],
         };

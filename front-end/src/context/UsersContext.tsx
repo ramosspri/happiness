@@ -12,12 +12,12 @@ export interface UsersType {
   telefone: number;
   stacks: [
     {
-      language1: string;
-      framework1: string;
+      language: string;
+      framework: string;
     },
     {
-      language2: string;
-      framework2: string;
+      language: string;
+      framework: string;
     },
   ];
 }

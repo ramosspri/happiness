@@ -19,6 +19,14 @@ export const Item = styled.td`
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
   vertical-align: middle;
+
+  &:nth-child(1) {
+    padding: 0;
+  }
+
+  &:nth-child(4) {
+    min-width: 4rem;
+  }
 `;
 export const ContainerItem = styled.tr`
   border-bottom: 1px solid ${({ theme }) => theme.colors.linha_color};
@@ -31,7 +39,18 @@ export const ContainerItem = styled.tr`
     transform: scale(1.01);
   }
 `;
+export const ContainerItemOculto = styled.tr`
+  border-bottom: 1px solid ${({ theme }) => theme.colors.linha_color};
+  /* padding: 0.625rem; */
+`;
 
+export const ParagrafoOculto = styled.p`
+  color: ${({ theme }) => theme.colors.letter_color};
+`;
+
+export const ContainerParagrafoOculto = styled.div`
+  padding: 10px;
+`;
 export const LinhaBreak = styled.div`
   background-color: ${({ theme }) => theme.colors.assets_blue};
   height: 2px;

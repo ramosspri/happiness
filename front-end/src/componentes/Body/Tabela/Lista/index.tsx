@@ -10,8 +10,10 @@ import {
   Cabecalho,
   ContainerList,
   ContainerItem,
-  LinhaBreak,
   Item,
+  ContainerItemOculto,
+  ParagrafoOculto,
+  ContainerParagrafoOculto,
 } from './styles';
 
 export const Lista = () => {
@@ -28,23 +30,45 @@ export const Lista = () => {
         </ContainerCabecalho>
         {users.map((user) => {
           return (
-            <ContainerItem key={user.id}>
-              <Item>{user.id}</Item>
-              <Item>{user.nome}</Item>
-              <Item>{user.email}</Item>
-              <Item>
-                <ButtonEditar>
-                  <IconContext.Provider value={{ className: 'button_editar' }}>
-                    <FaPencilAlt size={15} />
-                  </IconContext.Provider>
-                </ButtonEditar>
-                <ButtonLixeira>
-                  <IconContext.Provider value={{ className: 'button_excluir' }}>
-                    <FaTrashAlt size={15} />
-                  </IconContext.Provider>
-                </ButtonLixeira>
-              </Item>
-            </ContainerItem>
+            <>
+              <ContainerItem key={user.id}>
+                <Item>{user.id}</Item>
+                <Item>{user.nome}</Item>
+                <Item>{user.email}</Item>
+                <Item>
+                  <ButtonEditar>
+                    <IconContext.Provider
+                      value={{ className: 'button_editar' }}
+                    >
+                      <FaPencilAlt size={15} />
+                    </IconContext.Provider>
+                  </ButtonEditar>
+                  <ButtonLixeira>
+                    <IconContext.Provider
+                      value={{ className: 'button_excluir' }}
+                    >
+                      <FaTrashAlt size={15} />
+                    </IconContext.Provider>
+                  </ButtonLixeira>
+                </Item>
+              </ContainerItem>
+              <ContainerItemOculto>
+                <ContainerParagrafoOculto>
+                  {user.stacks.map((objeto) => {
+                    return (
+                      <>
+                        <ParagrafoOculto>
+                          Linguagens: {objeto.language}
+                        </ParagrafoOculto>
+                        <ParagrafoOculto>
+                          Frameworks: {objeto.framework}
+                        </ParagrafoOculto>
+                      </>
+                    );
+                  })}
+                </ContainerParagrafoOculto>
+              </ContainerItemOculto>
+            </>
           );
         })}
       </tbody>
