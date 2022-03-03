@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
 import { addUser, deleteUser, getUsers, updateUser } from '../../../../api/api';
@@ -64,6 +65,20 @@ const Form = () => {
       framework2: '',
     });
   }
+
+  async function handleEmailExiste(email: string) {
+    let existe = false;
+    await axios.get('http://localhost:3001/users').then((resposta) => {
+      const user = resposta.data.find(
+        (user: UsersType) => user.email === email,
+      );
+      if (user) {
+        existe = true;
+      }
+    });
+
+    return existe;
+  }
   function validacaoFormulario(input: InputType): boolean {
     const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i;
     const regexTelefone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
@@ -116,7 +131,7 @@ const Form = () => {
     return true;
   }
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
     let valida = validacaoFormulario(input);
@@ -144,25 +159,30 @@ const Form = () => {
         toggle();
         handleCancel();
       } else {
-        const user: UsersType = {
-          id: null,
-          nome: input.nome,
-          email: input.email,
-          telefone: +input.telefone,
-          stacks: [
-            {
-              language: input.language1,
-              framework: input.framework1,
-            },
-            {
-              language: input.language2,
-              framework: input.framework2,
-            },
-          ],
-        };
-        addUser(user);
-        toast.success('Usuário adicionado com sucesso.');
-        handleCancel();
+        let existe = await handleEmailExiste(input.email);
+        if (!existe) {
+          const user: UsersType = {
+            id: null,
+            nome: input.nome,
+            email: input.email,
+            telefone: +input.telefone,
+            stacks: [
+              {
+                language: input.language1,
+                framework: input.framework1,
+              },
+              {
+                language: input.language2,
+                framework: input.framework2,
+              },
+            ],
+          };
+          addUser(user);
+          toast.success('Usuário adicionado com sucesso.');
+          handleCancel();
+        } else {
+          toast.error('Esse email já existe.');
+        }
       }
     }
     setMudanca(true);
