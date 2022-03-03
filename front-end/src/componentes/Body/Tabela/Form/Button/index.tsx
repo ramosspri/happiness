@@ -1,4 +1,5 @@
 import React from 'react';
+import { useCreateContext } from '../../../../../context/UsersContext';
 import { ButtonBlue, ButtonRed, ContainerButton } from './styles';
 
 interface UserCancel {
@@ -6,10 +7,12 @@ interface UserCancel {
 }
 
 export const Button = ({ handleCancel }: UserCancel) => {
+  const { mostra } = useCreateContext();
+
   return (
     <ContainerButton>
       <ButtonRed onClick={handleCancel}>Cancelar</ButtonRed>
-      <ButtonBlue>Salvar</ButtonBlue>
+      <ButtonBlue>{mostra ? 'Atualizar' : 'Salvar'}</ButtonBlue>
     </ContainerButton>
   );
 };

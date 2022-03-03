@@ -5,7 +5,7 @@ export const BackgroundModal = styled.div`
   height: 100%;
   background-color: ${({ theme }) => theme.colors.background_modal};
   cursor: pointer;
-  opacity: 0.3;
+  opacity: 0.5;
   position: fixed;
   padding-left: 1.0625rem;
   padding-right: 1.0625rem;
@@ -23,7 +23,7 @@ export const ConteinerModal = styled.div`
   transform: translate(-50%, -25%);
   z-index: 1000;
   border-radius: ${({ theme }) => theme.borderRadius.normal};
-
+  color: ${({ theme }) => theme.colors.letter_color};
   @media (min-width: 800px) {
     width: 60%;
     top: 50%;
