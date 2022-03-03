@@ -6,7 +6,7 @@ export const themeDark = {
     light_grey: '#E4E4E4',
     assets_red: '#B73C36',
     assets_green: '#397F03',
-    assets_blue: '#006E97',
+    assets_blue: '#372E96',
     border_grey: '#B6B1B1',
     background_modal: '#222222',
     background: '#121212',

@@ -1,7 +1,14 @@
 import React from 'react';
 import { ImgLogo } from './styles';
-import Logomarca from '../../../assets/LogoLetraDark.png'
+import LogoDark from '../../../assets/LogoLetraDark.png';
+import LogoLight from '../../../assets/LogoLetraLight.png';
+import { useCreateContext } from '../../../context/UsersContext';
 
 export const Logo = () => {
-  return <ImgLogo src={Logomarca} />;
+  const { clicou } = useCreateContext();
+  if (clicou) {
+    return <ImgLogo src={LogoLight} />;
+  } else {
+    return <ImgLogo src={LogoDark} />;
+  }
 };

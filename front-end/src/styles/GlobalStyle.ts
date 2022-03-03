@@ -75,4 +75,13 @@ export const GlobalStyle = createGlobalStyle`
       background-color:${({ theme }) => theme.colors.background};
     }
 
+    .toggle_icons {
+      font-size:1.25rem;
+    }
+    .icon_color {
+      color: ${({ theme }) => theme.colors.letter_color};
+
+    }
+
+
 `;

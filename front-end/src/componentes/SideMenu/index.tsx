@@ -7,10 +7,17 @@ import {
   MenuText,
   DivClicaveis,
   DivIcones,
+  Toggle,
 } from './styles';
-import { FaHome, FaPeopleArrows } from 'react-icons/fa';
+import { FaHome, FaMoon, FaPeopleArrows, FaSun } from 'react-icons/fa';
+import { useCreateContext } from '../../context/UsersContext';
+import { IconContext } from 'react-icons';
 
 export const SideMenu = ({ mostra }: any) => {
+  const { clicou, setClicou } = useCreateContext();
+  function handleClick() {
+    setClicou(!clicou);
+  }
   return (
     <DivMenu className={mostra}>
       <MenuText className="hide1">Menu</MenuText>
@@ -18,7 +25,9 @@ export const SideMenu = ({ mostra }: any) => {
         <Line />
         <DivClicaveis>
           <DivIcones>
-            <FaHome className="hide1" style={{ marginRight: '.1875rem' }} />
+            <IconContext.Provider value={{ className: 'icon_color' }}>
+              <FaHome className="hide1" style={{ marginRight: '.1875rem' }} />
+            </IconContext.Provider>
           </DivIcones>
           <LinkDecoration to="/">Home</LinkDecoration>
         </DivClicaveis>
@@ -28,15 +37,24 @@ export const SideMenu = ({ mostra }: any) => {
       <LinkSpaces>
         <DivClicaveis>
           <DivIcones>
-            <FaPeopleArrows
-              className="hide1"
-              style={{ marginRight: '.1875rem' }}
-            />
+            <IconContext.Provider value={{ className: 'icon_color' }}>
+              <FaPeopleArrows
+                className="hide1"
+                style={{ marginRight: '.1875rem' }}
+              />
+            </IconContext.Provider>
           </DivIcones>
           <LinkDecoration to="/tabela">Tabela</LinkDecoration>
         </DivClicaveis>
         <Line style={{ opacity: '0.5', width: '9.375rem' }} />
       </LinkSpaces>
+      <IconContext.Provider
+        value={{ color: '6B62CE', className: 'toggle_icons' }}
+      >
+        <Toggle className={'hide2'} onClick={handleClick}>
+          {clicou ? <FaSun /> : <FaMoon />}
+        </Toggle>
+      </IconContext.Provider>
     </DivMenu>
   );
 };

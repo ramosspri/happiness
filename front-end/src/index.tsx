@@ -8,14 +8,13 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { themeDark } from './styles/themeDark';
-
+import { useCreateContext, UsersProvider } from './context/UsersContext';
 ReactDOM.render(
   <React.StrictMode>
-    <ThemeProvider theme={themeLight}>
-      <GlobalStyle />
+    <UsersProvider>
       <ToastContainer autoClose={3000} className="toast-container" />
       <App />
-    </ThemeProvider>
+    </UsersProvider>
   </React.StrictMode>,
   document.getElementById('root'),
 );

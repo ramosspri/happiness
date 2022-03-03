@@ -6,9 +6,12 @@ export const LinkDecoration = styled(Link)`
   color: ${({ theme }) => theme.colors.letter_color};
   font-size: ${({ theme }) => theme.font.sizes.large};
   font-family: Montserrat, sans-serif;
+  font-weight: ${({ theme }) => theme.font.weights.bold};
+  transition: all 0.2s ease-in-out;
 
   &&:hover {
     color: #6b62ce;
+    transform: scale(1.1);
   }
 `;
 
@@ -71,4 +74,16 @@ export const DivClicaveis = styled.div`
 
 export const DivIcones = styled.div`
   margin-right: 0.625rem;
+`;
+
+export const Toggle = styled.button`
+  border: none;
+  background-color: inherit;
+  align-self: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 `;

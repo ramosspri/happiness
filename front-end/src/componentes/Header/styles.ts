@@ -12,7 +12,8 @@ export const ContainerHeader = styled.header`
   margin-bottom: 1.875rem;
   background-color: ${({ theme }) => theme.colors.secondary};
   justify-content: space-between;
-  gap: 2rem;
+  gap: 9rem;
+  padding: 1.25rem;
   @media (min-width: 50rem) {
     margin-bottom: 1.25rem;
   }
