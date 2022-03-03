@@ -46,6 +46,8 @@ interface UsersContextType {
   setMudanca: Dispatch<SetStateAction<boolean>>;
   clicou: boolean;
   setClicou: Dispatch<SetStateAction<boolean>>;
+  loader: boolean;
+  setLoader: Dispatch<SetStateAction<boolean>>;
 }
 
 export const UsersContext = React.createContext({} as UsersContextType);
@@ -69,6 +71,7 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   const handleSetUsers = React.useCallback((data) => {
     setUsers(data);
   }, []);
+  const [loader, setLoader] = React.useState(true);
 
   const getUsers = async () => {
     const { data } = await axios.get('http://localhost:3001/users');
@@ -80,8 +83,6 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   React.useEffect(() => {
     getUsers();
   }, [mudanca]);
-
-
 
   return (
     <UsersContext.Provider
@@ -95,6 +96,8 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
         setMudanca,
         clicou,
         setClicou,
+        loader,
+        setLoader,
       }}
     >
       {children}

@@ -1,15 +1,11 @@
 import React from 'react';
-import { Button } from '../../Form/Button';
 import { BlocoUserInfo, ButtonEditar, ButtonLixeira } from './styles';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { themeLight } from '../../../../../styles/themeLight';
-import {
-  useCreateContext,
-  UsersType,
-} from '../../../../../context/UsersContext';
+import { useCreateContext } from '../../../../../context/UsersContext';
 
 export const ListaContent = () => {
-  const { toggle, users } = useCreateContext();
+  const { toggle } = useCreateContext();
   // console.log(users);
 
   function handleDelete(

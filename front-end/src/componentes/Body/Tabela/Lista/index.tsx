@@ -1,10 +1,8 @@
 import React from 'react';
-import { useCreateContext } from '../../../../context/UsersContext';
 import { ListaContent } from './ListaUsers';
 import { ContainerItens, ContainerList, LinhaBreak } from './styles';
 
 export const Lista = () => {
-
   return (
     <ContainerList>
       <ContainerItens>

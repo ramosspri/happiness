@@ -1,14 +1,15 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
+import { Loader } from './componentes/Loader/Loader';
 import Template from './componentes/Template';
-import { useCreateContext, UsersProvider } from './context/UsersContext';
+import { useCreateContext } from './context/UsersContext';
 import { GlobalStyle } from './styles/GlobalStyle';
 import { themeDark } from './styles/themeDark';
 import { themeLight } from './styles/themeLight';
 
 function App() {
   const [theme, setTheme] = React.useState(themeLight);
-  const { clicou} = useCreateContext();
+  const { clicou } = useCreateContext();
   React.useEffect(() => {
     if (clicou) {
       setTheme(themeDark);
@@ -26,6 +27,3 @@ function App() {
 }
 
 export default App;
-function UserContext(UserContext: any): { clicou: any } {
-  throw new Error('Function not implemented.');
-}
