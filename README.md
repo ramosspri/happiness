@@ -3,7 +3,7 @@
 
 #### Abaixo algumas imagens das partes principais do projeto:
 <br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20dark.png?raw=true" height="400" width="750">
+<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20dark.png?raw=true" height="500" width="750">
 
 ##### Página home no tema dark
 
