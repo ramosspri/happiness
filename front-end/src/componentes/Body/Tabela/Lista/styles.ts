@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { themeLight } from '../../../../styles/themeLight';
 
 export const ContainerCabecalho = styled.tr`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.primary};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.assets_blue};
 `;
 
 export const Cabecalho = styled.th`
