@@ -2,66 +2,64 @@
   "users": [
     {
       "id": 1,
-      "nome": "Tony",
-      "email": "tony@mail.com",
-      "telefone": 999999,
+      "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
+      "email": "carloseduardo.miranda2@gmail.com",
+      "telefone": 64984313656,
       "stacks": [
         {
-          "language": "Java Script",
-          "Framework": "VueJS"
+          "language1": "java",
+          "framework1": "springboot"
         },
         {
-          "language": "Node",
-          "Framework": "NestJS"
+          "language2": "java",
+          "framework2": "springboot"
         }
       ]
     },
     {
       "id": 2,
-      "nome": "Frank",
-      "email": "frank@mail.com",
-      "telefone": 999999,
+      "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
+      "email": "carloseduardo.miranda2@gmail.com",
+      "telefone": 64984313656,
       "stacks": [
         {
-          "language": "Java",
-          "Framework": "Spring Boot"
+          "language1": "typescript",
+          "framework1": "springboot"
         },
         {
-          "language": "Pyton",
-          "Framework": "Django"
+          "language2": "typescript",
+          "framework2": "django"
         }
       ]
     },
     {
-      "user": {
-        "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
-        "email": "64984313656",
-        "telefone": 64984313656,
-        "stacks": [
-          {
-            "language1": "typescript",
-            "framework1": "bootstrap"
-          },
-          {
-            "language2": "python",
-            "framework2": "react"
-          }
-        ]
-      },
-      "id": 3
-    },
-    {
-      "id": 4,
-      "nome": "Priscila Oliveira",
-      "email": "oliveirapriscila90@gmail.com",
-      "telefone": 31971863465,
+      "id": 3,
+      "nome": "Carlos Eduardo Rocha Miranda",
+      "email": "carloseduardo.miranda2@gmail.com",
+      "telefone": 64984591069,
       "stacks": [
         {
-          "language1": "python",
-          "framework1": "django"
+          "language1": "java",
+          "framework1": "react"
         },
         {
           "language2": "java",
+          "framework2": "springboot"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
+      "email": "carloseduardo.miranda2@gmail.com",
+      "telefone": 64984313656,
+      "stacks": [
+        {
+          "language1": "python",
+          "framework1": "springboot"
+        },
+        {
+          "language2": "python",
           "framework2": "springboot"
         }
       ]
