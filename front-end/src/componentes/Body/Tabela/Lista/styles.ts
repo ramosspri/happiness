@@ -46,11 +46,19 @@ export const ContainerItemOculto = styled.tr`
 
 export const ParagrafoOculto = styled.p`
   color: ${({ theme }) => theme.colors.letter_color};
+  text-transform: capitalize;
 `;
 
 export const ContainerParagrafoOculto = styled.div`
   padding: 10px;
+  width: 100%;
 `;
+
+export const Roxinho = styled.span`
+  color: ${({ theme }) => theme.colors.purple};
+  font-weight: ${({ theme }) => theme.font.weights.bold};
+`;
+
 export const LinhaBreak = styled.div`
   background-color: ${({ theme }) => theme.colors.assets_blue};
   height: 2px;

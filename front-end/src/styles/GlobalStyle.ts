@@ -83,4 +83,7 @@ export const GlobalStyle = createGlobalStyle`
     .button_excluir {
         color:${({ theme }) => theme.colors.purple};
     }
+
+
+
 `;

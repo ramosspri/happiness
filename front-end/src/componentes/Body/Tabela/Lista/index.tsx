@@ -14,11 +14,12 @@ import {
   ContainerItemOculto,
   ParagrafoOculto,
   ContainerParagrafoOculto,
+  Roxinho,
 } from './styles';
 
 export const Lista = () => {
   const { users } = useCreateContext();
-
+  const [ativoAcordeao, setAtivoAcordeao] = React.useState(false);
   return (
     <ContainerList>
       <tbody>
@@ -31,7 +32,10 @@ export const Lista = () => {
         {users.map((user) => {
           return (
             <>
-              <ContainerItem key={user.id}>
+              <ContainerItem
+                key={user.id}
+                onClick={() => setAtivoAcordeao(!ativoAcordeao)}
+              >
                 <Item>{user.id}</Item>
                 <Item>{user.nome}</Item>
                 <Item>{user.email}</Item>
@@ -52,22 +56,24 @@ export const Lista = () => {
                   </ButtonLixeira>
                 </Item>
               </ContainerItem>
-              <ContainerItemOculto>
-                <ContainerParagrafoOculto>
-                  {user.stacks.map((objeto) => {
-                    return (
-                      <>
-                        <ParagrafoOculto>
-                          Linguagens: {objeto.language}
-                        </ParagrafoOculto>
-                        <ParagrafoOculto>
-                          Frameworks: {objeto.framework}
-                        </ParagrafoOculto>
-                      </>
-                    );
-                  })}
-                </ContainerParagrafoOculto>
-              </ContainerItemOculto>
+              {ativoAcordeao && (
+                <ContainerItemOculto>
+                  <ContainerParagrafoOculto>
+                    <ParagrafoOculto>
+                      Linguagens:{' '}
+                      <Roxinho>
+                        {user.stacks[0].language}, {user.stacks[1].language}
+                      </Roxinho>
+                    </ParagrafoOculto>
+                    <ParagrafoOculto>
+                      Frameworks:{' '}
+                      <Roxinho>
+                        {user.stacks[0].framework}, {user.stacks[1].framework}
+                      </Roxinho>
+                    </ParagrafoOculto>
+                  </ContainerParagrafoOculto>
+                </ContainerItemOculto>
+              )}
             </>
           );
         })}
