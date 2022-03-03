@@ -1,7 +1,9 @@
+import axios from 'axios';
 import React from 'react';
 import { IconContext } from 'react-icons';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
-import { useCreateContext } from '../../../../context/UsersContext';
+import { toast } from 'react-toastify';
+import { useCreateContext, UsersType } from '../../../../context/UsersContext';
 import { themeLight } from '../../../../styles/themeLight';
 import { ListaContent } from './ListaUsers';
 import { ButtonEditar, ButtonLixeira } from './ListaUsers/styles';
@@ -18,8 +20,15 @@ import {
 } from './styles';
 
 export const Lista = () => {
-  const { users } = useCreateContext();
+  const { users, toggle, setId, setMudanca } = useCreateContext();
   const [ativoAcordeao, setAtivoAcordeao] = React.useState(false);
+  async function handleDelete(id: number | null) {
+    await axios.delete(`http://localhost:3001/users/${id}`).then((response) => {
+      console.log(response);
+    });
+    toast.success('Usuário deletado com sucesso');
+    setMudanca(true);
+  }
   return (
     <ContainerList>
       <tbody>
@@ -34,20 +43,25 @@ export const Lista = () => {
             <>
               <ContainerItem
                 key={user.id}
-                onClick={() => setAtivoAcordeao(!ativoAcordeao)}
+                // onClick={() => setAtivoAcordeao(!ativoAcordeao)}
               >
                 <Item>{user.id}</Item>
                 <Item>{user.nome}</Item>
                 <Item>{user.email}</Item>
                 <Item>
-                  <ButtonEditar>
+                  <ButtonEditar
+                    onClick={(e) => {
+                      setId(' ' + user.id);
+                      toggle();
+                    }}
+                  >
                     <IconContext.Provider
                       value={{ className: 'button_editar' }}
                     >
                       <FaPencilAlt size={15} />
                     </IconContext.Provider>
                   </ButtonEditar>
-                  <ButtonLixeira>
+                  <ButtonLixeira onClick={(e) => handleDelete(user.id)}>
                     <IconContext.Provider
                       value={{ className: 'button_excluir' }}
                     >
@@ -57,7 +71,7 @@ export const Lista = () => {
                 </Item>
               </ContainerItem>
               {ativoAcordeao && (
-                <ContainerItemOculto>
+                <ContainerItemOculto key={user.id}>
                   <ContainerParagrafoOculto>
                     <ParagrafoOculto>
                       Linguagens:{' '}

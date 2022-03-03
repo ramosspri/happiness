@@ -1,4 +1,6 @@
+import axios from 'axios';
 import React from 'react';
+import { getUser } from '../../api/api';
 import { useCreateContext } from '../../context/UsersContext';
 import { ContainerBody } from '../Body/ContainerBody/styles';
 import { Cadastro } from '../Body/Tabela/Cadastro';
@@ -22,7 +24,25 @@ export const useModal = () => {
 };
 
 export const Modal = () => {
-  const { toggle } = useCreateContext();
+  const { toggle, id, setInput } = useCreateContext();
+  let identificacao = +id;
+  async function getUser() {
+    const user = await axios
+      .get(`http://localhost:3001/users/${identificacao}`)
+      .then((response) => {
+        setInput({
+          id: response.data.id,
+          nome: response.data.nome,
+          email: response.data.email,
+          telefone: response.data.telefone,
+          language1: response.data.stacks[0].language,
+          framework1: response.data.stacks[0].framework,
+          language2: response.data.stacks[1].language,
+          framework2: response.data.stacks[1].framework,
+        });
+      });
+  }
+  getUser();
   return (
     <>
       <BackgroundModal onClick={toggle} />
