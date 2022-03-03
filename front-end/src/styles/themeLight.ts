@@ -9,6 +9,7 @@ export const themeLight = {
     assets_blue: '#00A4E1',
     border_grey: '#B6B1B1',
     background_modal: '#222222',
+    background: '#E4E4E4',
   },
   borderRadius: {
     none: '0',
