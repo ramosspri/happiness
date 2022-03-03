@@ -1,26 +1,38 @@
 import React from 'react';
+import { useCreateContext } from '../../../../context/UsersContext';
 import { ListaContent } from './ListaUsers';
-import { ContainerCabecalho, Cabecalho, ContainerList, ContainerItem, LinhaBreak, Item } from './styles';
+import {
+  ContainerCabecalho,
+  Cabecalho,
+  ContainerList,
+  ContainerItem,
+  LinhaBreak,
+  Item,
+} from './styles';
 
 export const Lista = () => {
+  const { users } = useCreateContext();
+
   return (
-
     <ContainerList>
-      <ContainerCabecalho>
-        <Cabecalho>ID</Cabecalho>
-        <Cabecalho>Nome</Cabecalho>
-        <Cabecalho>Email</Cabecalho>
-        <Cabecalho>Ações</Cabecalho>
-      </ContainerCabecalho>
-
-      <ContainerItem>
-        <Item>1</Item>
-        <Item>Carlos</Item>
-        <Item>carlos@gmail.com</Item>
-        <Item>Ações</Item>
-      </ContainerItem>
-
-       {/* <ListaContent /> */}
+      <tbody>
+        <ContainerCabecalho>
+          <Cabecalho>ID</Cabecalho>
+          <Cabecalho>Nome</Cabecalho>
+          <Cabecalho>Email</Cabecalho>
+          <Cabecalho>Ações</Cabecalho>
+        </ContainerCabecalho>
+        {users.map((user) => {
+          return (
+            <ContainerItem key={user.id}>
+              <Item>{user.id}</Item>
+              <Item>{user.nome}</Item>
+              <Item>{user.email}</Item>
+              <Item>Ações</Item>
+            </ContainerItem>
+          );
+        })}
+      </tbody>
     </ContainerList>
   );
 };
