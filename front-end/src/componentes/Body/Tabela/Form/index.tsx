@@ -1,6 +1,6 @@
 import React from 'react';
 import { toast } from 'react-toastify';
-import { addUser, deleteUser, getUsers } from '../../../../api/api';
+import { addUser, deleteUser, getUsers, updateUser } from '../../../../api/api';
 import {
   InputType,
   useCreateContext,
@@ -22,6 +22,9 @@ import {
 const Form = () => {
   const { input, setInput, mostra, mudanca, setMudanca } = useCreateContext();
 
+  function handleId(id: string): void {
+    setInput({ ...input, id });
+  }
   function handleNome(nome: string): void {
     setInput({ ...input, nome });
   }
@@ -101,6 +104,7 @@ const Form = () => {
   }
   function handleCancel() {
     setInput({
+      id: '',
       nome: '',
       email: '',
       telefone: '',
@@ -117,25 +121,46 @@ const Form = () => {
     let valida = validacaoFormulario(input);
 
     if (valida) {
-      const user: UsersType = {
-        id: null,
-        nome: input.nome,
-        email: input.email,
-        telefone: +input.telefone,
-        stacks: [
-          {
-            language1: input.language1,
-            framework1: input.framework1,
-          },
-          {
-            language2: input.language2,
-            framework2: input.framework2,
-          },
-        ],
-      };
-      addUser(user);
-      toast.success('Usuário adicionado com sucesso.');
-      handleCancel();
+      if (input.id) {
+        const user: UsersType = {
+          id: +input.id,
+          nome: input.nome,
+          email: input.email,
+          telefone: +input.telefone,
+          stacks: [
+            {
+              language1: input.language1,
+              framework1: input.framework1,
+            },
+            {
+              language2: input.language2,
+              framework2: input.framework2,
+            },
+          ],
+        };
+        updateUser(input.id, user);
+        toast.success('Usuário atualizado com sucesso.');
+      } else {
+        const user: UsersType = {
+          id: null,
+          nome: input.nome,
+          email: input.email,
+          telefone: +input.telefone,
+          stacks: [
+            {
+              language1: input.language1,
+              framework1: input.framework1,
+            },
+            {
+              language2: input.language2,
+              framework2: input.framework2,
+            },
+          ],
+        };
+        addUser(user);
+        toast.success('Usuário adicionado com sucesso.');
+        handleCancel();
+      }
     }
     setMudanca(true);
   }
@@ -144,7 +169,12 @@ const Form = () => {
       {mostra && (
         <BlocoId>
           <label htmlFor="id">ID</label>
-          <InputStyled type="text" name="id" />
+          <InputStyled
+            type="text"
+            name="id"
+            value={input.id}
+            onChange={(e) => handleId(e.target.value)}
+          />
         </BlocoId>
       )}
 
