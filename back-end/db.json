@@ -49,6 +49,22 @@
         ]
       },
       "id": 3
+    },
+    {
+      "id": 4,
+      "nome": "Priscila Oliveira",
+      "email": "oliveirapriscila90@gmail.com",
+      "telefone": 31971863465,
+      "stacks": [
+        {
+          "language1": "python",
+          "framework1": "django"
+        },
+        {
+          "language2": "java",
+          "framework2": "springboot"
+        }
+      ]
     }
   ]
 }
