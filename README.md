@@ -3,22 +3,22 @@
 
 #### Abaixo algumas imagens das partes principais do projeto:
 <br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20dark.png?raw=true" height="500" width="750">
+<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20dark.png?raw=true" height="400" width="750">
 
 ##### Página home no tema dark
 
 <br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20light.png?raw=true" height="400" width="350">
+<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20light.png?raw=true" height="400" width="750">
 
 ##### Página home no tema light
 
 <br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20dark.png?raw=true" height="200" width="350">
+<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20dark.png?raw=true" height="400" width="750">
 
 ##### Página onde fica a tabela e todo o processo de CRUD no tema dark
 
 <br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20light.png?raw=true" height="200" width="350">
+<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20light.png?raw=true" height="400" width="750">
 
 ##### Página onde fica a tabela e todo o processo de CRUD no tema light
 <br><br>
