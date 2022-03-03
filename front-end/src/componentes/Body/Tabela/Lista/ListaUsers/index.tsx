@@ -11,6 +11,12 @@ import {
 export const ListaContent = () => {
   const { toggle, users } = useCreateContext();
   // console.log(users);
+
+  function handleDelete(
+    event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+  ) {
+    console.log(event.currentTarget.dataset.id);
+  }
   return (
     <>
       <BlocoUserInfo>
@@ -20,7 +26,7 @@ export const ListaContent = () => {
         <ButtonEditar onClick={toggle}>
           <FaPencilAlt size={15} color={themeLight.colors.assets_green} />
         </ButtonEditar>
-        <ButtonLixeira>
+        <ButtonLixeira onClick={handleDelete}>
           <FaTrashAlt size={15} color={themeLight.colors.assets_red} />
         </ButtonLixeira>
       </BlocoUserInfo>

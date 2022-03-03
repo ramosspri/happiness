@@ -25,7 +25,7 @@ export const ConteinerModal = styled.div`
   border-radius: ${({ theme }) => theme.borderRadius.normal};
 
   @media (min-width: 800px) {
-    width: 70%;
+    width: 60%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);

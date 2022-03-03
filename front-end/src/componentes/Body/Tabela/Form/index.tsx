@@ -115,6 +115,7 @@ const Form = () => {
     event.preventDefault();
 
     let valida = validacaoFormulario(input);
+    
     if (valida) {
       const user: UsersType = {
         id: null,

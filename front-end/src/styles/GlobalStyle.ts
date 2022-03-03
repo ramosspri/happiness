@@ -71,4 +71,8 @@ export const GlobalStyle = createGlobalStyle`
     }
     }
 
+    body {
+      background-color:#E4E4E4;
+    }
+
 `;

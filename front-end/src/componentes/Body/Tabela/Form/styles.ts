@@ -4,9 +4,10 @@ export const ContainerForm = styled.form`
   margin-top: 1.125rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
+
   gap: 1rem;
   @media (min-width: 800px) {
-    gap: 0.5rem;
+    gap: 0.8rem;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     align-items: end;
   }

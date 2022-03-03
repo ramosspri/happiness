@@ -8,7 +8,7 @@ export const LinkDecoration = styled(Link)`
   font-family: Montserrat, sans-serif;
 
   &&:hover {
-    color: #6B62CE;
+    color: #6b62ce;
   }
 
   @media (min-width: 800px) {
@@ -23,7 +23,8 @@ export const LinkSpaces = styled.div`
   }
 `;
 
-export const DivMenu = styled.div` //Div inteira do menu lateral
+export const DivMenu = styled.div`
+  //Div inteira do menu lateral
   grid-area: sidemenu;
   @media (min-width: 800px) {
     border-radius: 0.625rem;
@@ -34,6 +35,7 @@ export const DivMenu = styled.div` //Div inteira do menu lateral
     box-shadow: ${({ theme }) => theme.font.shadow.shadow_container};
     //padding: 1.9rem 1.6875rem;
     flex-direction: column;
+    background-color: ${({ theme }) => theme.colors.secondary};
   }
 `;
 
@@ -43,11 +45,11 @@ export const Line = styled.hr`
     margin-top: 10px;
     margin-bottom: 10px;
     border-bottom: 2px solid;
-    color: #372E96;
+    color: #372e96;
     width: 13.125rem;
     height: 0.125rem;
   }
-`
+`;
 
 export const MenuText = styled.p`
   @media (min-width: 800px) {
@@ -57,14 +59,15 @@ export const MenuText = styled.p`
     font-weight: ${({ theme }) => theme.font.weights.bold};
     font-family: Montserrat, sans-serif;
   }
-`
+`;
 
-export const DivClicaveis = styled.div` //Div que envolve apenas os clicáveis
+export const DivClicaveis = styled.div`
+  //Div que envolve apenas os clicáveis
   display: flex;
   flex-direction: columns;
   justify-content: center;
-`
+`;
 
 export const DivIcones = styled.div`
   margin-right: 10px;
-`
+`;
