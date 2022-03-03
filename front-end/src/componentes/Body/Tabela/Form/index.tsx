@@ -52,7 +52,18 @@ const Form = () => {
   function handleFrameworks2(framework2: string): void {
     setInput({ ...input, framework2 });
   }
-
+  function handleCancel() {
+    setInput({
+      id: '',
+      nome: '',
+      email: '',
+      telefone: '',
+      language1: '',
+      framework1: '',
+      language2: '',
+      framework2: '',
+    });
+  }
   function validacaoFormulario(input: InputType): boolean {
     const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]+.([a-z]+)?$/i;
     const regexTelefone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
@@ -103,18 +114,6 @@ const Form = () => {
     }
 
     return true;
-  }
-  function handleCancel() {
-    setInput({
-      id: '',
-      nome: '',
-      email: '',
-      telefone: '',
-      language1: '',
-      framework1: '',
-      language2: '',
-      framework2: '',
-    });
   }
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -185,6 +184,7 @@ const Form = () => {
       <BlocoNome>
         <label htmlFor="nome">Nome</label>
         <InputStyled
+          placeholder="Ex: José"
           value={input.nome}
           onChange={(e) => handleNome(e.target.value)}
           type="text"
@@ -195,6 +195,7 @@ const Form = () => {
       <BlocoEmail>
         <label htmlFor="email">E-mail</label>
         <InputStyled
+          placeholder="Ex: joao@gmail.com"
           value={input.email}
           onChange={(e) => handleEmail(e.target.value)}
           type="text"
@@ -205,6 +206,7 @@ const Form = () => {
       <BlocoTelefone>
         <label htmlFor="telefone">Telefone</label>
         <InputStyled
+          placeholder="Ex: 64984591069"
           value={input.telefone}
           onChange={(e) => handleTelefone(e.target.value)}
           type="text"

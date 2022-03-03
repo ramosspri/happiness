@@ -25,12 +25,37 @@ export const useModal = () => {
 
 export const Modal = () => {
   const { toggle, id, setInput } = useCreateContext();
+  function handleCancel() {
+    setInput({
+      id: '',
+      nome: '',
+      email: '',
+      telefone: '',
+      language1: '',
+      framework1: '',
+      language2: '',
+      framework2: '',
+    });
+  }
+
   return (
     <>
-      <BackgroundModal onClick={toggle} />
+      <BackgroundModal
+        onClick={(e) => {
+          handleCancel();
+          toggle();
+        }}
+      />
       <ConteinerModal>
         <ContainerBody>
-          <HeaderModal onClick={toggle}>X</HeaderModal>
+          <HeaderModal
+            onClick={(e) => {
+              handleCancel();
+              toggle();
+            }}
+          >
+            X
+          </HeaderModal>
           <Cadastro />
         </ContainerBody>
       </ConteinerModal>
