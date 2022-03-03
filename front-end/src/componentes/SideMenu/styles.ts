@@ -29,7 +29,7 @@ export const DivMenu = styled.div`
   @media (min-width: 800px) {
     border-radius: 0.625rem;
     width: 15.9375rem;
-    height: 31.625rem;
+    /* height: 31.625rem; */
     left: 0px;
     border: 0.0625rem solid ${({ theme }) => theme.colors.border_grey};
     box-shadow: ${({ theme }) => theme.font.shadow.shadow_container};
