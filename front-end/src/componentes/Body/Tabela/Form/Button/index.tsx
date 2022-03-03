@@ -7,14 +7,20 @@ interface UserCancel {
 }
 
 export const Button = ({ handleCancel }: UserCancel) => {
-  const { mostra } = useCreateContext();
+  const { mostra, toggle } = useCreateContext();
 
   return (
     <ContainerButton>
-      <ButtonRed type="reset" onClick={handleCancel}>
-        Cancelar
-      </ButtonRed>
+      {!mostra && (
+        <ButtonRed type="reset" onClick={handleCancel}>
+          Cancelar
+        </ButtonRed>
+      )}
+
       <ButtonBlue>{mostra ? 'Atualizar' : 'Salvar'}</ButtonBlue>
     </ContainerButton>
   );
 };
+function handleSubmit() {
+  throw new Error('Function not implemented.');
+}

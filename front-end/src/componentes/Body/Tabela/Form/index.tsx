@@ -6,6 +6,7 @@ import {
   useCreateContext,
   UsersType,
 } from '../../../../context/UsersContext';
+import { Toggle } from '../../../SideMenu/styles';
 import { Button } from './Button';
 import {
   ContainerForm,
@@ -20,7 +21,8 @@ import {
 } from './styles';
 
 const Form = () => {
-  const { input, setInput, mostra, mudanca, setMudanca } = useCreateContext();
+  const { input, setInput, mostra, mudanca, setMudanca, toggle } =
+    useCreateContext();
 
   function handleId(id: string): void {
     setInput({ ...input, id });
@@ -140,6 +142,8 @@ const Form = () => {
         };
         updateUser(input.id, user);
         toast.success('Usuário atualizado com sucesso.');
+        toggle();
+        handleCancel();
       } else {
         const user: UsersType = {
           id: null,

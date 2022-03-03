@@ -3,6 +3,7 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
+import { getUser } from '../../../../api/api';
 import { useCreateContext, UsersType } from '../../../../context/UsersContext';
 import { themeLight } from '../../../../styles/themeLight';
 import { ListaContent } from './ListaUsers';
@@ -20,7 +21,7 @@ import {
 } from './styles';
 
 export const Lista = () => {
-  const { users, toggle, setId, setMudanca } = useCreateContext();
+  const { users, toggle, setId, setMudanca, setInput } = useCreateContext();
   const [ativoAcordeao, setAtivoAcordeao] = React.useState(false);
   async function handleDelete(id: number | null) {
     await axios.delete(`http://localhost:3001/users/${id}`).then((response) => {
@@ -28,6 +29,24 @@ export const Lista = () => {
     });
     toast.success('Usuário deletado com sucesso');
     setMudanca(true);
+  }
+  async function handleEditar(id: number | null) {
+    const user = await axios
+      .get(`http://localhost:3001/users/${id}`)
+      .then((response) => {
+        console.log(response.data);
+        setInput({
+          id: response.data.id,
+          nome: response.data.nome,
+          email: response.data.email,
+          telefone: response.data.telefone,
+          language1: response.data.stacks[0].language,
+          framework1: response.data.stacks[0].framework,
+          language2: response.data.stacks[1].language,
+          framework2: response.data.stacks[1].framework,
+        });
+      });
+    toggle();
   }
   return (
     <ContainerList>
@@ -51,8 +70,7 @@ export const Lista = () => {
                 <Item>
                   <ButtonEditar
                     onClick={(e) => {
-                      setId(' ' + user.id);
-                      toggle();
+                      handleEditar(user.id);
                     }}
                   >
                     <IconContext.Provider
@@ -70,8 +88,9 @@ export const Lista = () => {
                   </ButtonLixeira>
                 </Item>
               </ContainerItem>
+
               {ativoAcordeao && (
-                <ContainerItemOculto key={user.id}>
+                <ContainerItemOculto key={user.nome}>
                   <ContainerParagrafoOculto>
                     <ParagrafoOculto>
                       Linguagens:{' '}
