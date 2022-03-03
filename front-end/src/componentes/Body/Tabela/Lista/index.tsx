@@ -1,18 +1,26 @@
 import React from 'react';
 import { ListaContent } from './ListaUsers';
-import { ContainerItens, ContainerList, LinhaBreak } from './styles';
+import { ContainerCabecalho, Cabecalho, ContainerList, ContainerItem, LinhaBreak, Item } from './styles';
 
 export const Lista = () => {
   return (
+
     <ContainerList>
-      <ContainerItens>
-        <h2>ID</h2>
-        <h2>Nome</h2>
-        <h2>Email</h2>
-        <h2>Ações</h2>
-      </ContainerItens>
-      <LinhaBreak />
-      <ListaContent />
+      <ContainerCabecalho>
+        <Cabecalho>ID</Cabecalho>
+        <Cabecalho>Nome</Cabecalho>
+        <Cabecalho>Email</Cabecalho>
+        <Cabecalho>Ações</Cabecalho>
+      </ContainerCabecalho>
+
+      <ContainerItem>
+        <Item>1</Item>
+        <Item>Carlos</Item>
+        <Item>carlos@gmail.com</Item>
+        <Item>Ações</Item>
+      </ContainerItem>
+
+       {/* <ListaContent /> */}
     </ContainerList>
   );
 };

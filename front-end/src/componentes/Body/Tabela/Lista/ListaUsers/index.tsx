@@ -6,7 +6,6 @@ import { useCreateContext } from '../../../../../context/UsersContext';
 
 export const ListaContent = () => {
   const { toggle } = useCreateContext();
-  // console.log(users);
 
   function handleDelete(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>,
@@ -15,17 +14,17 @@ export const ListaContent = () => {
   }
   return (
     <>
-      <BlocoUserInfo>
-        <p>1</p>
-        <p>Priscila</p>
-        <p>priscila@gmail.com</p>
-        <ButtonEditar onClick={toggle}>
-          <FaPencilAlt size={15} color={themeLight.colors.assets_green} />
-        </ButtonEditar>
-        <ButtonLixeira onClick={handleDelete}>
-          <FaTrashAlt size={15} color={themeLight.colors.assets_red} />
-        </ButtonLixeira>
-      </BlocoUserInfo>
+    {/* //   <BlocoUserInfo>
+    //     <p>1</p>
+    //     <p>Priscila</p>
+    //     <p>priscila@gmail.com</p>
+    //     <ButtonEditar onClick={toggle}>
+    //       <FaPencilAlt size={15} color={themeLight.colors.assets_green} />
+    //     </ButtonEditar>
+    //     <ButtonLixeira onClick={handleDelete}>
+    //       <FaTrashAlt size={15} color={themeLight.colors.assets_red} />
+    //     </ButtonLixeira>
+    //   </BlocoUserInfo> */}
     </>
   );
 };

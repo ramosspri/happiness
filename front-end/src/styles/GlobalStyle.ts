@@ -9,8 +9,7 @@ export const GlobalStyle = createGlobalStyle`
     small, strike, strong, sub, sup, tt, var,
     b, u, i, center,
     dl, dt, dd, ol, ul, li,
-    fieldset, form, label, legend,
-    table, caption, tbody, tfoot, thead, tr, th, td,
+    fieldset, form, label, legend, caption, tbody, tfoot, thead, tr, th, td,
     article, aside, canvas, details, embed,
     figure, figcaption, footer, header, hgroup,
     menu, nav, output, ruby, section, summary,
@@ -46,10 +45,6 @@ export const GlobalStyle = createGlobalStyle`
     }
     *, *:before, *:after {
       box-sizing: inherit;
-    }
-    table {
-        border-collapse: collapse;
-        border-spacing: 0;
     }
     label {
         display:block;

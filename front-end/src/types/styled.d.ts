@@ -17,6 +17,8 @@ declare module 'styled-components' {
       background: string;
       button_cancelar: string;
       purple: string;
+      cabecalho_color: string;
+      linha_color: string;
     };
     borderRadius: {
       none: string;

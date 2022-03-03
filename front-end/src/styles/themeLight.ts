@@ -12,6 +12,8 @@ export const themeLight = {
     background: '#E4E4E4',
     button_cancelar: '#F2F2F2',
     purple: '#6B62CE',
+    cabecalho_color: "#616161",
+    linha_color: "#BEDFEB",
   },
   borderRadius: {
     none: '0',

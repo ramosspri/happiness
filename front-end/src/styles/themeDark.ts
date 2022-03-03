@@ -12,6 +12,10 @@ export const themeDark = {
     background: '#121212',
     button_cancelar: '#444444',
     purple: '#6B62CE',
+    cabecalho_color: "#616161",
+    linha_color: "#BEDFEB",
+
+
   },
   borderRadius: {
     none: '0',
