@@ -22,7 +22,7 @@ export const ContainerFooter = styled.footer`
     bottom: 0;
     left: 0;
     right: 0;
-    margin-top: 50px;
+    margin-top: 1.25rem;
   }
 `;
 
