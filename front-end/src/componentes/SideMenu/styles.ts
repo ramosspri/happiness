@@ -64,3 +64,7 @@ export const DivClicaveis = styled.div` //Div que envolve apenas os clicáveis
   flex-direction: columns;
   justify-content: center;
 `
+
+export const DivIcones = styled.div`
+  margin-right: 10px;
+`

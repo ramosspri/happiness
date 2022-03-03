@@ -1,5 +1,5 @@
 import React from 'react';
-import { DivMenu, LinkDecoration, LinkSpaces, Line, MenuText, DivClicaveis } from './styles';
+import { DivMenu, LinkDecoration, LinkSpaces, Line, MenuText, DivClicaveis, DivIcones } from './styles';
 import { FaHome, FaPeopleArrows } from "react-icons/fa";
 
 export const SideMenu = ({ mostra }: any) => {
@@ -9,17 +9,21 @@ export const SideMenu = ({ mostra }: any) => {
       <LinkSpaces>
       <Line/>
       <DivClicaveis>
-      <FaHome style={{marginRight: '3px'}}/>
+        <DivIcones>
+          <FaHome className='hide1' style={{marginRight: '3px'}}/>
+        </DivIcones>
         <LinkDecoration to="/">Home</LinkDecoration>
-        </DivClicaveis>
-        <Line style={{opacity: '0.5', width:'100px'}}/>
+      </DivClicaveis>
+          <Line style={{opacity: '0.5', width:'150px'}}/>
       </LinkSpaces>
       <LinkSpaces>
       <DivClicaveis>
-      <FaPeopleArrows style={{marginRight: '3px'}}/>
-        <LinkDecoration to="/tabela">Tabela</LinkDecoration>
+        <DivIcones>
+          <FaPeopleArrows className='hide1' style={{marginRight: '3px'}}/>
+        </DivIcones>
+          <LinkDecoration to="/tabela">Tabela</LinkDecoration>
       </DivClicaveis>
-        <Line style={{opacity: '0.5', width:'100px'}}/>
+        <Line style={{opacity: '0.5', width:'150px'}}/>
       </LinkSpaces>
     </DivMenu>
   );
