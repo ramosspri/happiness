@@ -77,6 +77,10 @@ export const GlobalStyle = createGlobalStyle`
       color: ${({ theme }) => theme.colors.letter_color};
 
     }
-
-
+    .button_editar {
+        color:${({ theme }) => theme.colors.letter_color};
+    }
+    .button_excluir {
+        color:${({ theme }) => theme.colors.purple};
+    }
 `;

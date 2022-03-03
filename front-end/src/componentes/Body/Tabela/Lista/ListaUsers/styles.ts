@@ -8,12 +8,20 @@ export const BlocoUserInfo = styled.div`
 
 export const ButtonEditar = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: inherit;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 
 export const ButtonLixeira = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme.colors.secondary};
+  background-color: inherit;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.3);
+  }
 `;

@@ -1,6 +1,10 @@
 import React from 'react';
+import { IconContext } from 'react-icons';
+import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { useCreateContext } from '../../../../context/UsersContext';
+import { themeLight } from '../../../../styles/themeLight';
 import { ListaContent } from './ListaUsers';
+import { ButtonEditar, ButtonLixeira } from './ListaUsers/styles';
 import {
   ContainerCabecalho,
   Cabecalho,
@@ -28,7 +32,18 @@ export const Lista = () => {
               <Item>{user.id}</Item>
               <Item>{user.nome}</Item>
               <Item>{user.email}</Item>
-              <Item>Ações</Item>
+              <Item>
+                <ButtonEditar>
+                  <IconContext.Provider value={{ className: 'button_editar' }}>
+                    <FaPencilAlt size={15} />
+                  </IconContext.Provider>
+                </ButtonEditar>
+                <ButtonLixeira>
+                  <IconContext.Provider value={{ className: 'button_excluir' }}>
+                    <FaTrashAlt size={15} />
+                  </IconContext.Provider>
+                </ButtonLixeira>
+              </Item>
             </ContainerItem>
           );
         })}
