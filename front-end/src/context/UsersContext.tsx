@@ -41,6 +41,8 @@ interface UsersContextType {
   users: UsersType[];
   mudanca: boolean;
   setMudanca: Dispatch<SetStateAction<boolean>>;
+  clicou: boolean;
+  setClicou: Dispatch<SetStateAction<boolean>>;
 }
 
 export const UsersContext = React.createContext({} as UsersContextType);
@@ -60,7 +62,7 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   });
   const { mostra, toggle } = useModal();
   const [mudanca, setMudanca] = React.useState(false);
-
+  const [clicou, setClicou] = React.useState(false);
   const handleSetUsers = React.useCallback((data) => {
     setUsers(data);
   }, []);
@@ -78,7 +80,17 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
 
   return (
     <UsersContext.Provider
-      value={{ input, setInput, mostra, toggle, users, mudanca, setMudanca }}
+      value={{
+        input,
+        setInput,
+        mostra,
+        toggle,
+        users,
+        mudanca,
+        setMudanca,
+        clicou,
+        setClicou,
+      }}
     >
       {children}
     </UsersContext.Provider>

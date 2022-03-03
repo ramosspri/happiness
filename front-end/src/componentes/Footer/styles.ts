@@ -11,6 +11,8 @@ export const ContainerFooter = styled.footer`
   height: 3.6rem;
   z-index: 100;
   margin-top: 3.125rem;
+  background-color: ${({ theme }) => theme.colors.secondary};
+
   @media (min-width: 50rem) {
     margin-top: 1.25rem;
   }

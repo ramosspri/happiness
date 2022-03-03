@@ -2,13 +2,16 @@ export const themeDark = {
   colors: {
     primary: '#282828',
     secondary: '#282828',
-    letter_color: '#FFFFFF',
+    letter_color: '#FEF5ED',
     light_grey: '#E4E4E4',
     assets_red: '#B73C36',
     assets_green: '#397F03',
     assets_blue: '#006E97',
     border_grey: '#B6B1B1',
     background_modal: '#222222',
+    background: '#121212',
+    button_cancelar: '#444444',
+    purple: '#6B62CE',
   },
   borderRadius: {
     none: '0',

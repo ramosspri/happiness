@@ -8,6 +8,8 @@ export const ContainerBody = styled.div`
   box-shadow: ${({ theme }) => theme.font.shadow.shadow_container};
   padding: 1.9rem 1.6875rem;
   position: relative;
+  background-color: ${({ theme }) => theme.colors.secondary};
+
   & + & {
     margin-top: 1rem;
   }

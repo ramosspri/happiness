@@ -1,8 +1,8 @@
 export const themeLight = {
   colors: {
     primary: '#00A4E1',
-    secondary: '#FFFFFF',
-    letter_color: '#616161',
+    secondary: '#F2F2F2',
+    letter_color: '#222222',
     light_grey: '#E4E4E4',
     assets_red: '#FF3D33',
     assets_green: '#54BF00',
@@ -10,6 +10,8 @@ export const themeLight = {
     border_grey: '#B6B1B1',
     background_modal: '#222222',
     background: '#E4E4E4',
+    button_cancelar: '#F2F2F2',
+    purple: '#6B62CE',
   },
   borderRadius: {
     none: '0',

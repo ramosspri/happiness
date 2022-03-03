@@ -10,30 +10,25 @@ export const LinkDecoration = styled(Link)`
   &&:hover {
     color: #6b62ce;
   }
-
-  @media (min-width: 800px) {
-    color: #444444;
-  }
 `;
 
 export const LinkSpaces = styled.div`
-  margin: 0px;
+  margin: 0rem;
   @media (min-width: 50rem) {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
 `;
 
 export const DivMenu = styled.div`
   //Div inteira do menu lateral
   grid-area: sidemenu;
-  @media (min-width: 800px) {
+  align-items: end;
+  @media (min-width: 50rem) {
     border-radius: 0.625rem;
     width: 15.9375rem;
-    /* height: 31.625rem; */
-    left: 0px;
+    left: 0rem;
     border: 0.0625rem solid ${({ theme }) => theme.colors.border_grey};
     box-shadow: ${({ theme }) => theme.font.shadow.shadow_container};
-    //padding: 1.9rem 1.6875rem;
     flex-direction: column;
     background-color: ${({ theme }) => theme.colors.secondary};
   }
@@ -42,9 +37,9 @@ export const DivMenu = styled.div`
 export const Line = styled.hr`
   border: none;
   @media (min-width: 800px) {
-    margin-top: 10px;
-    margin-bottom: 10px;
-    border-bottom: 2px solid;
+    margin-top: 0.625rem;
+    margin-bottom: 0.625rem;
+    border-bottom: 0.125rem solid;
     color: #372e96;
     width: 13.125rem;
     height: 0.125rem;
@@ -52,7 +47,9 @@ export const Line = styled.hr`
 `;
 
 export const MenuText = styled.p`
-  @media (min-width: 800px) {
+  color: ${({ theme }) => theme.colors.letter_color};
+
+  @media (min-width: 50rem) {
     padding: 1.25rem;
     color: ${({ theme }) => theme.colors.letter_color};
     font-size: ${({ theme }) => theme.font.sizes.xlarge};
@@ -64,10 +61,14 @@ export const MenuText = styled.p`
 export const DivClicaveis = styled.div`
   //Div que envolve apenas os clicáveis
   display: flex;
-  flex-direction: columns;
-  justify-content: center;
+  align-items: center;
+  @media (min-width: 50rem) {
+    display: flex;
+    flex-direction: columns;
+    justify-content: center;
+  }
 `;
 
 export const DivIcones = styled.div`
-  margin-right: 10px;
+  margin-right: 0.625rem;
 `;

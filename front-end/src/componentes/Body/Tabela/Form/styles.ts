@@ -51,6 +51,8 @@ export const BlocoTelefone = styled.div`
   }
 `;
 export const SelectStyled = styled.select`
+  background: ${({ theme }) => theme.colors.secondary};
+
   margin-top: 0.3125rem;
   width: 100%;
   height: 2.1875rem;

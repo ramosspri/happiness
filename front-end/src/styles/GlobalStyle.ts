@@ -72,11 +72,7 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-      @media (min-width:800px) {
       background-color:${({ theme }) => theme.colors.background};
-
-      }
-
     }
 
 `;
