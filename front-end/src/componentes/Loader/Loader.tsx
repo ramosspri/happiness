@@ -1,6 +1,10 @@
 import React from 'react';
-import { LoaderStyled } from './styles';
+import { LoaderStyled, ContainerLoader } from './styles';
 
 export const Loader = () => {
-  return <LoaderStyled />;
+  return (
+  <ContainerLoader>
+    <LoaderStyled />
+  </ContainerLoader>
+  );
 };

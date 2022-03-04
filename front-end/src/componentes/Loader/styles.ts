@@ -10,10 +10,16 @@ const rotate = keyframes`
 `;
 
 export const LoaderStyled = styled.div`
-  border: 10px solid ${({ theme }) => theme.colors.light_grey};
-  border-top: 10px solid ${({ theme }) => theme.colors.letter_color};
+  border: 5px solid ${({ theme }) => theme.colors.light_grey};
+  border-top: 5px solid ${({ theme }) => theme.colors.purple};
   border-radius: 50%;
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
+  margin: 10px;
   animation: ${rotate} 2s linear infinite;
 `;
+
+export const ContainerLoader = styled.span `
+  left:50%;
+  position: relative;
+`

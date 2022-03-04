@@ -5,7 +5,6 @@ import Priscila from '../../../assets/Priscila.jpeg';
 import Carlos from '../../../assets/carlos.jpeg';
 import Gustavo from '../../../assets/Gustavo.jpeg';
 import { useCreateContext } from '../../../context/UsersContext';
-import { LoaderStyled } from '../../Loader/styles';
 
 const HomeCorpo = () => {
   return (
