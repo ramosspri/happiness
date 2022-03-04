@@ -5,8 +5,10 @@ import Priscila from '../../../assets/Priscila.jpeg';
 import Carlos from '../../../assets/carlos.jpeg';
 import Gustavo from '../../../assets/Gustavo.jpeg';
 import { useCreateContext } from '../../../context/UsersContext';
+import { Loader } from '../../Loader/Loader';
 
 const HomeCorpo = () => {
+  const { loader, setLoader } = useCreateContext();
   return (
     <>
       <ContainerBody>
