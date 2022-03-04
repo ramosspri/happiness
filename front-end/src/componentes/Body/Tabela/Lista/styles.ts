@@ -42,7 +42,7 @@ export const ContainerItem = styled.tr`
 // Create the keyframes
 const cresce = keyframes`
   0% {
-    transform: translateY(1rem);
+    transform: translateY(-1rem);
   }
   100% {
         transform: translateY(0rem);
@@ -57,7 +57,7 @@ export const ContainerItemOculto = styled.tr`
 export const ParagrafoOculto = styled.p`
   color: ${({ theme }) => theme.colors.letter_color};
   text-transform: capitalize;
-  animation: ${cresce} 0.3s ease-out;
+  animation: ${cresce} 0.1s ease-out;
 `;
 
 export const ContainerParagrafoOculto = styled.td.attrs({
