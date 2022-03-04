@@ -1,6 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-// import { Container } from './styles';
 
 export const ContainerBody = styled.div`
   border-radius: 10px;

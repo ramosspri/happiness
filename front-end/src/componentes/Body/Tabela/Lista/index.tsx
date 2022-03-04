@@ -3,10 +3,8 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { useCreateContext, UsersType } from '../../../../context/UsersContext';
-import { themeLight } from '../../../../styles/themeLight';
+import { useCreateContext } from '../../../../context/UsersContext';
 import { Loader } from '../../../Loader/Loader';
-import { ListaContent } from './ListaUsers';
 import { ButtonEditar, ButtonLixeira } from './ListaUsers/styles';
 import {
   ContainerCabecalho,
@@ -21,13 +19,12 @@ import {
 } from './styles';
 
 export const Lista = () => {
-  const { users, toggle, setId, setMudanca, setInput, loader, setLoader } =
+  const { users, toggle, setMudanca, setInput, loader, setLoader } =
     useCreateContext();
   const [ativoAcordeao, setAtivoAcordeao] = React.useState('0');
 
   function handleToggle(index: string) {
     if (ativoAcordeao === index) {
-      console.log(index);
       return setAtivoAcordeao('0');
     }
     setAtivoAcordeao(index);
@@ -35,9 +32,9 @@ export const Lista = () => {
 
   async function handleDelete(id: number | null) {
     setMudanca(true);
-    await axios.delete(`http://localhost:3001/users/${id}`).then((response) => {
-      console.log(response);
-    });
+    await axios
+      .delete(`http://localhost:3001/users/${id}`)
+      .then((response) => {});
 
     toast.success('Usuário deletado com sucesso');
   }
@@ -48,7 +45,6 @@ export const Lista = () => {
     const user = await axios
       .get(`http://localhost:3001/users/${id}`)
       .then((response) => {
-        console.log(response.data);
         setInput({
           id: response.data.id,
           nome: response.data.nome,

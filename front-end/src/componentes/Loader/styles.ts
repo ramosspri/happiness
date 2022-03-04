@@ -19,7 +19,8 @@ export const LoaderStyled = styled.div`
   animation: ${rotate} 2s linear infinite;
 `;
 
-export const ContainerLoader = styled.span`
-  left: 120%;
+export const ContainerLoader = styled.td`
+  /* left: 120%; */
   position: relative;
+  left: 45%;
 `;
