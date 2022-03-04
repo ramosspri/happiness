@@ -63,6 +63,22 @@
           "framework2": "springboot"
         }
       ]
+    },
+    {
+      "id": 5,
+      "nome": "PRISCILA RAMOS DE OLIVEIRA",
+      "email": "oliveirapriscila90@gmail.com",
+      "telefone": 31971863465,
+      "stacks": [
+        {
+          "language": "python",
+          "framework": "springboot"
+        },
+        {
+          "language": "java",
+          "framework": "django"
+        }
+      ]
     }
   ]
 }
