@@ -15,7 +15,6 @@ const Header = () => {
   return (
     <ContainerHeader>
       <Logo />
-
       <SideMenu mostra={'hide2'} />
       <IconContext.Provider
         value={{ color: '6B62CE', className: 'toggle_icons' }}

@@ -78,12 +78,12 @@ export const Lista = () => {
               <>
                 <ContainerItem
                   onClick={(e) => handleToggle('' + (index + 1))}
-                  key={user.id}
+                  key={user.nome}
                 >
-                  <Item>{user.id}</Item>
-                  <Item>{user.nome}</Item>
-                  <Item>{user.email}</Item>
-                  <Item>
+                  <Item key={user.id}>{user.id}</Item>
+                  <Item key={user.nome}>{user.nome}</Item>
+                  <Item key={user.email}>{user.email}</Item>
+                  <Item key={index}>
                     <ButtonEditar
                       onClick={(e) => {
                         e.stopPropagation();
@@ -112,7 +112,7 @@ export const Lista = () => {
                 </ContainerItem>
 
                 {ativoAcordeao === '' + (index + 1) && (
-                  <ContainerItemOculto key={user.nome}>
+                  <ContainerItemOculto key={user.email}>
                     <ContainerParagrafoOculto>
                       <ParagrafoOculto>
                         Linguagens:{' '}

@@ -36,9 +36,9 @@ export const GlobalStyle = createGlobalStyle`
     body {
       min-height:100%;
       line-height: 1;
-        background-color:${({ theme }) => theme.colors.background};
+      background-color:${({ theme }) => theme.colors.background};
     }
-   
+
     ol, ul {
         list-style: none;
     }

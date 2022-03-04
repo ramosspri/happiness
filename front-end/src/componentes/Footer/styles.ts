@@ -12,7 +12,9 @@ export const ContainerFooter = styled.footer`
   z-index: 100;
   margin-top: 50px;
   background-color: ${({ theme }) => theme.colors.secondary};
-
+  position: fixed;
+  bottom: 0vh;
+  width: 100%;
   @media (min-width: 50rem) {
     position: static;
     bottom: 0;
