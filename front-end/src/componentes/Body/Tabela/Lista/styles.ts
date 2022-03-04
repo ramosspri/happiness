@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { themeLight } from '../../../../styles/themeLight';
 
 export const ContainerCabecalho = styled.tr`
@@ -39,6 +39,17 @@ export const ContainerItem = styled.tr`
     transform: scale(1.01);
   }
 `;
+
+// Create the keyframes
+const cresce = keyframes`
+  0% {
+    transform: translateY(1rem);
+  }
+  100% {
+        transform: translateY(0rem);
+  }
+`;
+
 export const ContainerItemOculto = styled.tr`
   border-bottom: 1px solid ${({ theme }) => theme.colors.linha_color};
   /* padding: 0.625rem; */
@@ -47,11 +58,13 @@ export const ContainerItemOculto = styled.tr`
 export const ParagrafoOculto = styled.p`
   color: ${({ theme }) => theme.colors.letter_color};
   text-transform: capitalize;
+  animation: ${cresce} 0.3s ease-out;
 `;
 
-export const ContainerParagrafoOculto = styled.div`
+export const ContainerParagrafoOculto = styled.td.attrs({
+  colSpan: 2,
+})`
   padding: 10px;
-  width: 100%;
 `;
 
 export const Roxinho = styled.span`

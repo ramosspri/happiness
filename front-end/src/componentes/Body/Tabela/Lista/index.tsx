@@ -22,7 +22,17 @@ import {
 
 export const Lista = () => {
   const { users, toggle, setId, setMudanca, setInput } = useCreateContext();
-  const [ativoAcordeao, setAtivoAcordeao] = React.useState(false);
+  const [ativoAcordeao, setAtivoAcordeao] = React.useState('0');
+
+  function handleToggle(index: string) {
+    if (ativoAcordeao === index) {
+      console.log(index);
+      return setAtivoAcordeao('0');
+    }
+    setAtivoAcordeao(index);
+    console.log(ativoAcordeao);
+  }
+
   async function handleDelete(id: number | null) {
     await axios.delete(`http://localhost:3001/users/${id}`).then((response) => {
       console.log(response);
@@ -30,6 +40,7 @@ export const Lista = () => {
     toast.success('Usuário deletado com sucesso');
     setMudanca(true);
   }
+
   async function handleEditar(id: number | null) {
     const user = await axios
       .get(`http://localhost:3001/users/${id}`)
@@ -48,6 +59,7 @@ export const Lista = () => {
       });
     toggle();
   }
+
   return (
     <ContainerList>
       <tbody>
@@ -57,12 +69,12 @@ export const Lista = () => {
           <Cabecalho>Email</Cabecalho>
           <Cabecalho>Ações</Cabecalho>
         </ContainerCabecalho>
-        {users.map((user) => {
+        {users.map((user, index) => {
           return (
             <>
               <ContainerItem
+                onClick={(e) => handleToggle('' + (index + 1))}
                 key={user.id}
-                // onClick={() => setAtivoAcordeao(!ativoAcordeao)}
               >
                 <Item>{user.id}</Item>
                 <Item>{user.nome}</Item>
@@ -89,7 +101,7 @@ export const Lista = () => {
                 </Item>
               </ContainerItem>
 
-              {ativoAcordeao && (
+              {ativoAcordeao === '' + (index + 1) && (
                 <ContainerItemOculto key={user.nome}>
                   <ContainerParagrafoOculto>
                     <ParagrafoOculto>
