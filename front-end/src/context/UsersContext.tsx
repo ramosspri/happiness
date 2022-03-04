@@ -75,7 +75,7 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   const handleSetUsers = React.useCallback((data) => {
     setUsers(data);
   }, []);
-  const [loader, setLoader] = React.useState(true);
+  const [loader, setLoader] = React.useState(false);
 
   const [id, setId] = React.useState('');
   const getUsers = async () => {
@@ -86,7 +86,9 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   };
 
   React.useEffect(() => {
+    setLoader(true);
     getUsers();
+    setLoader(false);
   }, [mudanca]);
 
   return (

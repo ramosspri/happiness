@@ -4,7 +4,7 @@ export const ContainerFooter = styled.footer`
   grid-area: footer;
   display: flex;
   justify-content: center;
-  position: fixed;
+  /* position: absolute; */
   bottom: 0;
   left: 0;
   right: 0;

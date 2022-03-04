@@ -6,6 +6,7 @@ import { toast } from 'react-toastify';
 import { getUser } from '../../../../api/api';
 import { useCreateContext, UsersType } from '../../../../context/UsersContext';
 import { themeLight } from '../../../../styles/themeLight';
+import { Loader } from '../../../Loader/Loader';
 import { ListaContent } from './ListaUsers';
 import { ButtonEditar, ButtonLixeira } from './ListaUsers/styles';
 import {
@@ -21,7 +22,8 @@ import {
 } from './styles';
 
 export const Lista = () => {
-  const { users, toggle, setId, setMudanca, setInput } = useCreateContext();
+  const { users, toggle, setId, setMudanca, setInput, loader, setLoader } =
+    useCreateContext();
   const [ativoAcordeao, setAtivoAcordeao] = React.useState('0');
 
   function handleToggle(index: string) {
@@ -69,65 +71,69 @@ export const Lista = () => {
           <Cabecalho>Email</Cabecalho>
           <Cabecalho>Ações</Cabecalho>
         </ContainerCabecalho>
-        {users.map((user, index) => {
-          return (
-            <>
-              <ContainerItem
-                onClick={(e) => handleToggle('' + (index + 1))}
-                key={user.id}
-              >
-                <Item>{user.id}</Item>
-                <Item>{user.nome}</Item>
-                <Item>{user.email}</Item>
-                <Item>
-                  <ButtonEditar
-                    onClick={(e) => {
-                      e.stopPropagation(); 
-                      handleEditar(user.id);
-                    }}
-                  >
-                    <IconContext.Provider
-                      value={{ className: 'button_editar' }}
+        {loader ? (
+          <Loader />
+        ) : (
+          users.map((user, index) => {
+            return (
+              <>
+                <ContainerItem
+                  onClick={(e) => handleToggle('' + (index + 1))}
+                  key={user.id}
+                >
+                  <Item>{user.id}</Item>
+                  <Item>{user.nome}</Item>
+                  <Item>{user.email}</Item>
+                  <Item>
+                    <ButtonEditar
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleEditar(user.id);
+                      }}
                     >
-                      <FaPencilAlt size={15} />
-                    </IconContext.Provider>
-                  </ButtonEditar>
-                  <ButtonLixeira
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      handleDelete(user.id);
-                    }}
-                  >
-                    <IconContext.Provider
-                      value={{ className: 'button_excluir' }}
+                      <IconContext.Provider
+                        value={{ className: 'button_editar' }}
+                      >
+                        <FaPencilAlt size={15} />
+                      </IconContext.Provider>
+                    </ButtonEditar>
+                    <ButtonLixeira
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleDelete(user.id);
+                      }}
                     >
-                      <FaTrashAlt size={15} />
-                    </IconContext.Provider>
-                  </ButtonLixeira>
-                </Item>
-              </ContainerItem>
+                      <IconContext.Provider
+                        value={{ className: 'button_excluir' }}
+                      >
+                        <FaTrashAlt size={15} />
+                      </IconContext.Provider>
+                    </ButtonLixeira>
+                  </Item>
+                </ContainerItem>
 
-              {ativoAcordeao === '' + (index + 1) && (
-                <ContainerItemOculto key={user.nome}>
-                  <ContainerParagrafoOculto>
-                    <ParagrafoOculto>
-                      Linguagens:{' '}
-                      <Roxinho>
-                        {user.stacks[0].language}, {user.stacks[1].language}
-                      </Roxinho>
-                    </ParagrafoOculto>
-                    <ParagrafoOculto>
-                      Frameworks:{' '}
-                      <Roxinho>
-                        {user.stacks[0].framework}, {user.stacks[1].framework}
-                      </Roxinho>
-                    </ParagrafoOculto>
-                  </ContainerParagrafoOculto>
-                </ContainerItemOculto>
-              )}
-            </>
-          );
-        })}
+                {ativoAcordeao === '' + (index + 1) && (
+                  <ContainerItemOculto key={user.nome}>
+                    <ContainerParagrafoOculto>
+                      <ParagrafoOculto>
+                        Linguagens:{' '}
+                        <Roxinho>
+                          {user.stacks[0].language}, {user.stacks[1].language}
+                        </Roxinho>
+                      </ParagrafoOculto>
+                      <ParagrafoOculto>
+                        Frameworks:{' '}
+                        <Roxinho>
+                          {user.stacks[0].framework}, {user.stacks[1].framework}
+                        </Roxinho>
+                      </ParagrafoOculto>
+                    </ContainerParagrafoOculto>
+                  </ContainerItemOculto>
+                )}
+              </>
+            );
+          })
+        )}
       </tbody>
     </ContainerList>
   );
