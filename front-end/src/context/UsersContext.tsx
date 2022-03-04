@@ -79,16 +79,16 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
 
   const [id, setId] = React.useState('');
   const getUsers = async () => {
+    setLoader(true);
     const { data } = await axios.get('http://localhost:3001/users');
     setUsers(data);
     handleSetUsers(data);
     setMudanca(false);
+    setLoader(false);
   };
 
   React.useEffect(() => {
-    setLoader(true);
     getUsers();
-    setLoader(false);
   }, [mudanca]);
 
   return (

@@ -22,7 +22,7 @@ import {
 } from './styles';
 
 const Form = () => {
-  const { input, setInput, mostra, mudanca, setMudanca, toggle } =
+  const { input, setInput, mostra, mudanca, setMudanca, toggle, setLoader } =
     useCreateContext();
 
   function handleId(id: string): void {
@@ -133,6 +133,7 @@ const Form = () => {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    setLoader(true);
 
     let valida = validacaoFormulario(input);
 
@@ -185,6 +186,8 @@ const Form = () => {
         }
       }
     }
+    setLoader(false);
+
     setMudanca(true);
   }
   return (
@@ -197,6 +200,7 @@ const Form = () => {
             name="id"
             value={input.id}
             onChange={(e) => handleId(e.target.value)}
+            disabled
           />
         </BlocoId>
       )}

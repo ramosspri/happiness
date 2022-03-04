@@ -3,7 +3,6 @@ import React from 'react';
 import { IconContext } from 'react-icons';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
-import { getUser } from '../../../../api/api';
 import { useCreateContext, UsersType } from '../../../../context/UsersContext';
 import { themeLight } from '../../../../styles/themeLight';
 import { Loader } from '../../../Loader/Loader';
@@ -32,18 +31,20 @@ export const Lista = () => {
       return setAtivoAcordeao('0');
     }
     setAtivoAcordeao(index);
-    console.log(ativoAcordeao);
   }
 
   async function handleDelete(id: number | null) {
+    setMudanca(true);
     await axios.delete(`http://localhost:3001/users/${id}`).then((response) => {
       console.log(response);
     });
+
     toast.success('Usuário deletado com sucesso');
-    setMudanca(true);
   }
 
   async function handleEditar(id: number | null) {
+    setLoader(true);
+
     const user = await axios
       .get(`http://localhost:3001/users/${id}`)
       .then((response) => {
@@ -59,6 +60,8 @@ export const Lista = () => {
           framework2: response.data.stacks[1].framework,
         });
       });
+    setLoader(false);
+
     toggle();
   }
 
