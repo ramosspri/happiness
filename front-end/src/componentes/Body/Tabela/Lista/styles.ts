@@ -2,7 +2,7 @@ import styled, { keyframes } from 'styled-components';
 import { themeLight } from '../../../../styles/themeLight';
 
 export const ContainerCabecalho = styled.tr`
-  border-bottom: 2px solid ${({ theme }) => theme.colors.assets_blue};
+  border-bottom: 2px solid ${({ theme }) => theme.colors.purple};
 `;
 
 export const Cabecalho = styled.th`
@@ -29,13 +29,12 @@ export const Item = styled.td`
   }
 `;
 export const ContainerItem = styled.tr`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.linha_color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.purple};
   transition: all 0.2s ease-in-out;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.linha_color};
     cursor: pointer;
-    /* font-weight: ${({ theme }) => theme.font.weights.bold}; */
     transform: scale(1.01);
   }
 `;
@@ -51,7 +50,7 @@ const cresce = keyframes`
 `;
 
 export const ContainerItemOculto = styled.tr`
-  border-bottom: 1px solid ${({ theme }) => theme.colors.linha_color};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.purple};
   /* padding: 0.625rem; */
 `;
 
