@@ -41,7 +41,13 @@ export const GlobalStyle = createGlobalStyle`
         content: none;
     }
     html {
+      height:100%;
       box-sizing: border-box;
+    }
+    body {
+      min-height:100%;
+
+      background-color:${({ theme }) => theme.colors.background};
     }
     *, *:before, *:after {
       box-sizing: inherit;
@@ -68,8 +74,9 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
       background-color:${({ theme }) => theme.colors.background};
-    }
+  min-height: 100%;
 
+    }
     .toggle_icons {
       font-size:1.25rem;
     }
