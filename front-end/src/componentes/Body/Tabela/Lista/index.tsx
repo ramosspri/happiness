@@ -82,6 +82,7 @@ export const Lista = () => {
                 <Item>
                   <ButtonEditar
                     onClick={(e) => {
+                      e.stopPropagation(); 
                       handleEditar(user.id);
                     }}
                   >
@@ -91,7 +92,12 @@ export const Lista = () => {
                       <FaPencilAlt size={15} />
                     </IconContext.Provider>
                   </ButtonEditar>
-                  <ButtonLixeira onClick={(e) => handleDelete(user.id)}>
+                  <ButtonLixeira
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleDelete(user.id);
+                    }}
+                  >
                     <IconContext.Provider
                       value={{ className: 'button_excluir' }}
                     >
