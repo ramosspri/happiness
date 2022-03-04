@@ -7,7 +7,6 @@ export const ContainerBody = styled.div`
   padding: 1.9rem 1.6875rem;
   position: relative;
   background-color: ${({ theme }) => theme.colors.secondary};
-
   & + & {
     margin-top: 1rem;
   }

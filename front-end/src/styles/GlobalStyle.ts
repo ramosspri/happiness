@@ -26,9 +26,19 @@ export const GlobalStyle = createGlobalStyle`
     footer, header, hgroup, menu, nav, section {
         display: block;
     }
-    body {
-        line-height: 1;
+    *, *:before, *:after {
+      box-sizing: inherit;
     }
+    html {
+      height:100%;
+      box-sizing: border-box;
+    }
+    body {
+      min-height:100%;
+      line-height: 1;
+        background-color:${({ theme }) => theme.colors.background};
+    }
+   
     ol, ul {
         list-style: none;
     }
@@ -40,18 +50,7 @@ export const GlobalStyle = createGlobalStyle`
         content: '';
         content: none;
     }
-    html {
-      height:100%;
-      box-sizing: border-box;
-    }
-    body {
-      min-height:100%;
 
-      background-color:${({ theme }) => theme.colors.background};
-    }
-    *, *:before, *:after {
-      box-sizing: inherit;
-    }
     label {
         display:block;
         font-size:1.125rem;

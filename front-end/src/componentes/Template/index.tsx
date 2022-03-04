@@ -17,8 +17,8 @@ const Template = () => {
         <Grid>
           <Header />
           <SideMenu mostra="hide1" />
-          <Footer />
           <MyRoute />
+          <Footer />
         </Grid>
       </BrowserRouter>
       {mostra && <Modal />}
