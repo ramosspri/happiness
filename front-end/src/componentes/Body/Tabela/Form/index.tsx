@@ -85,46 +85,64 @@ const Form = () => {
 
     if (input.nome === '') {
       toast.error('O nome está vazio');
+      setLoader(false);
+
       return false;
     }
 
     if (input.email === '') {
       toast.error('O e-mail está vazio.');
+      setLoader(false);
+
       return false;
     }
 
     if (input.telefone === '') {
       toast.error('O telefone está vazio.');
+      setLoader(false);
+
       return false;
     }
 
     if (input.language1 === '') {
       toast.error('A linguagem 1 está vazia.');
+      setLoader(false);
+
       return false;
     }
 
     if (input.language2 === '') {
       toast.error('A linguagem 2 está vazia.');
+      setLoader(false);
+
       return false;
     }
 
     if (input.framework1 === '') {
       toast.error('O framework 1 está vazio.');
+      setLoader(false);
+
       return false;
     }
 
     if (input.framework2 === '') {
       toast.error('O framework 2 está vazio.');
+      setLoader(false);
+
       return false;
     }
 
     if (!regexEmail.test(input.email)) {
       toast.error('Digite um E-mail válido.');
+      setLoader(false);
+
       return false;
     }
 
     if (!regexTelefone.test(input.telefone)) {
       toast.error('Digite um Telefone válido.');
+      setLoader(false);
+
       return false;
     }
 
@@ -133,11 +151,12 @@ const Form = () => {
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setLoader(true);
 
     let valida = validacaoFormulario(input);
 
     if (valida) {
+      setMudanca(true);
+
       if (input.id) {
         const user: UsersType = {
           id: +input.id,
@@ -155,6 +174,7 @@ const Form = () => {
             },
           ],
         };
+
         updateUser(input.id, user);
         toast.success('Usuário atualizado com sucesso.');
         toggle();
@@ -180,15 +200,14 @@ const Form = () => {
           };
           addUser(user);
           toast.success('Usuário adicionado com sucesso.');
+
           handleCancel();
         } else {
           toast.error('Esse email já existe.');
         }
       }
     }
-    setLoader(false);
-
-    setMudanca(true);
+    // setLoader(false);
   }
   return (
     <ContainerForm onSubmit={handleSubmit}>
