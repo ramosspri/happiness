@@ -4,7 +4,7 @@ import { IconContext } from 'react-icons';
 import { FaPencilAlt, FaTrashAlt } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import { useCreateContext } from '../../../../context/UsersContext';
-import { Loader } from '../../../Loader/Loader';
+import { LoaderStyled } from '../../../Loader/styles';
 import { ButtonEditar, ButtonLixeira } from './ListaUsers/styles';
 import {
   ContainerCabecalho,
@@ -63,16 +63,18 @@ export const Lista = () => {
 
   return (
     <ContainerList>
-      <tbody>
+      <tbody >
         <ContainerCabecalho>
           <Cabecalho>ID</Cabecalho>
           <Cabecalho>Nome</Cabecalho>
           <Cabecalho>Email</Cabecalho>
           <Cabecalho>Ações</Cabecalho>
         </ContainerCabecalho>
-        {loader ? (
-          <Loader />
-        ) : (
+        {loader ? <tr>
+            <td colSpan={4}>
+              <LoaderStyled />
+            </td>
+          </tr> :
           users.map((user, index) => {
             return (
               <>
@@ -132,7 +134,7 @@ export const Lista = () => {
               </>
             );
           })
-        )}
+        }
       </tbody>
     </ContainerList>
   );

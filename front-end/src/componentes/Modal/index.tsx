@@ -1,6 +1,4 @@
-import axios from 'axios';
 import React from 'react';
-import { getUser } from '../../api/api';
 import { useCreateContext } from '../../context/UsersContext';
 import { ContainerBody } from '../Body/ContainerBody/styles';
 import { Cadastro } from '../Body/Tabela/Cadastro';

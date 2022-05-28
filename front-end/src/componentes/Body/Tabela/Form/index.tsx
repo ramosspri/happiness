@@ -1,13 +1,12 @@
 import axios from 'axios';
 import React from 'react';
 import { toast } from 'react-toastify';
-import { addUser, deleteUser, getUsers, updateUser } from '../../../../api/api';
+import { addUser, updateUser } from '../../../../api/api';
 import {
   InputType,
   useCreateContext,
   UsersType,
 } from '../../../../context/UsersContext';
-import { Toggle } from '../../../SideMenu/styles';
 import { Button } from './Button';
 import {
   ContainerForm,
@@ -22,7 +21,7 @@ import {
 } from './styles';
 
 const Form = () => {
-  const { input, setInput, mostra, mudanca, setMudanca, toggle, setLoader } =
+  const { input, setInput, mostra, setMudanca, toggle, setLoader } =
     useCreateContext();
 
   function handleId(id: string): void {
@@ -207,7 +206,6 @@ const Form = () => {
         }
       }
     }
-    // setLoader(false);
   }
   return (
     <ContainerForm onSubmit={handleSubmit}>

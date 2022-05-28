@@ -1,6 +1,5 @@
 import React from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Loader } from './componentes/Loader/Loader';
 import Template from './componentes/Template';
 import { useCreateContext } from './context/UsersContext';
 import { GlobalStyle } from './styles/GlobalStyle';

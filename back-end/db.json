@@ -7,76 +7,12 @@
       "telefone": 64984313656,
       "stacks": [
         {
-          "language1": "java",
-          "framework1": "springboot"
-        },
-        {
-          "language2": "java",
-          "framework2": "springboot"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
-      "email": "carloseduardo.miranda2@gmail.com",
-      "telefone": 64984313656,
-      "stacks": [
-        {
-          "language1": "typescript",
-          "framework1": "springboot"
-        },
-        {
-          "language2": "typescript",
-          "framework2": "django"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "nome": "Carlos Eduardo Rocha Miranda",
-      "email": "carloseduardo.miranda2@gmail.com",
-      "telefone": 64984591069,
-      "stacks": [
-        {
-          "language1": "java",
-          "framework1": "react"
-        },
-        {
-          "language2": "java",
-          "framework2": "springboot"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "nome": "VICTOR HENRIQUE GONCALVES MIRANDA",
-      "email": "carloseduardo.miranda2@gmail.com",
-      "telefone": 64984313656,
-      "stacks": [
-        {
-          "language1": "python",
-          "framework1": "springboot"
-        },
-        {
-          "language2": "python",
-          "framework2": "springboot"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "nome": "PRISCILA RAMOS DE OLIVEIRA",
-      "email": "oliveirapriscila90@gmail.com",
-      "telefone": 31971863465,
-      "stacks": [
-        {
-          "language": "python",
-          "framework": "springboot"
-        },
-        {
-          "language": "java",
+          "language": "typescript",
           "framework": "django"
+        },
+        {
+          "language": "typescript",
+          "framework": "springboot"
         }
       ]
     }

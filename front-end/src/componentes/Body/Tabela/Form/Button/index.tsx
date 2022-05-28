@@ -7,7 +7,7 @@ interface UserCancel {
 }
 
 export const Button = ({ handleCancel }: UserCancel) => {
-  const { mostra, toggle } = useCreateContext();
+  const { mostra } = useCreateContext();
 
   return (
     <ContainerButton>
@@ -21,6 +21,4 @@ export const Button = ({ handleCancel }: UserCancel) => {
     </ContainerButton>
   );
 };
-function handleSubmit() {
-  throw new Error('Function not implemented.');
-}
+

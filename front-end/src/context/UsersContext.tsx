@@ -1,9 +1,6 @@
 import React, { Dispatch, SetStateAction } from 'react';
-import { getUsers } from '../api/api';
 import { useModal } from '../componentes/Modal';
 import axios from 'axios';
-import { themeLight } from '../styles/themeLight';
-import { themeDark } from '../styles/themeDark';
 
 export interface UsersType {
   id: number | null;

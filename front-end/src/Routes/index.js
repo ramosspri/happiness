@@ -4,7 +4,6 @@ import Home from '../Pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import { Listaa } from '../Pages/Lista';
 
-// import { Container } from './styles';
 
 export const MyRoute = () => {
   return (

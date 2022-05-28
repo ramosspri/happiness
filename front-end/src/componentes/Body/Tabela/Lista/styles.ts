@@ -1,5 +1,4 @@
 import styled, { keyframes } from 'styled-components';
-import { themeLight } from '../../../../styles/themeLight';
 
 export const ContainerCabecalho = styled.tr`
   border-bottom: 2px solid ${({ theme }) => theme.colors.purple};
@@ -11,7 +10,6 @@ export const Cabecalho = styled.th`
   font-size: 1rem;
   padding-bottom: 0.5rem;
 
-  /* width:12.5rem; */
 `;
 export const Item = styled.td`
   text-align: center;
@@ -19,7 +17,6 @@ export const Item = styled.td`
   padding-bottom: 0.625rem;
   padding-left: 0.625rem;
   vertical-align: middle;
-
   &:nth-child(1) {
     padding: 0;
   }
@@ -28,10 +25,10 @@ export const Item = styled.td`
     min-width: 4rem;
   }
 `;
+
 export const ContainerItem = styled.tr`
   border-bottom: 1px solid ${({ theme }) => theme.colors.purple};
   transition: all 0.2s ease-in-out;
-
   &:hover {
     background-color: ${({ theme }) => theme.colors.linha_color};
     cursor: pointer;
@@ -45,13 +42,12 @@ const cresce = keyframes`
     transform: translateY(-1rem);
   }
   100% {
-        transform: translateY(0rem);
+    transform: translateY(0rem);
   }
 `;
 
 export const ContainerItemOculto = styled.tr`
   border-bottom: 1px solid ${({ theme }) => theme.colors.purple};
-  /* padding: 0.625rem; */
 `;
 
 export const ParagrafoOculto = styled.p`
@@ -78,8 +74,7 @@ export const LinhaBreak = styled.div`
 `;
 
 export const ContainerList = styled.table`
-  /* border:1px solid red; */
-  width: 100%;
+ width: 100%;
   border-spacing: 0.625rem;
   border-collapse: collapse;
 `;

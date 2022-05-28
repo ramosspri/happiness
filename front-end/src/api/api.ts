@@ -1,6 +1,5 @@
-import React from 'react';
 import axios from 'axios';
-import { useCreateContext, UsersType } from '../context/UsersContext';
+import {  UsersType } from '../context/UsersContext';
 
 const client = axios.create({
   baseURL: 'http://localhost:3001/users',
