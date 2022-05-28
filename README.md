@@ -1,38 +1,46 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/301c88e0-5e43-4d4f-a92a-3c767c748061/deploy-status)](https://app.netlify.com/sites/happinesshr/deploys)
+# Getting Started with Create React App
 
-#### Repositório criado para hospedar o Happiness, nosso site com o Tony, desenvolvido em React e Typescript, utilizando Styled Components. O objetivo principal do projeto é um CRUD de usuários, com hospedagem em API interna.
-<br>
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-#### O resultado está em: [Happiness HR Solutions](https://happinesshr.netlify.app/)
-<br>
+## Available Scripts
 
-#### Abaixo algumas imagens das partes principais do projeto:
-<br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20dark.png?raw=true" height="400" width="750">
+In the project directory, you can run:
 
-##### Página home no tema dark
+### `yarn start`
 
-<br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Home%20light.png?raw=true" height="400" width="750">
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-##### Página home no tema light
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-<br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20dark.png?raw=true" height="400" width="750">
+### `yarn test`
 
-##### Página onde fica a tabela e todo o processo de CRUD no tema dark
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-<br>
-<img src="https://github.com/ramosspri/happiness/blob/main/front-end/src/assets/Table%20light.png?raw=true" height="400" width="750">
+### `yarn build`
 
-##### Página onde fica a tabela e todo o processo de CRUD no tema light
-<br><br>
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-#### Desenvolvedores: 
-<br>
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- [Carlos Eduardo](https://github.com/CarlosERM)
-- [Priscila Ramos](https://github.com/ramosspri)
-- [Gustavo Machado](https://github.com/GustavoSpm)
-<br><br><br>
-![Text](https://media.giphy.com/media/iIqmM5tTjmpOB9mpbn/giphy.gif)
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `yarn eject`
+
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
