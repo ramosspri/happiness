@@ -29,7 +29,7 @@ export const SideMenu = ({ mostra }: any) => {
               <FaHome className="hide1" style={{ marginRight: '.1875rem' }} />
             </IconContext.Provider>
           </DivIcones>
-          <LinkDecoration to="/">Home</LinkDecoration>
+          <LinkDecoration to="/happiness/home">Home</LinkDecoration>
         </DivClicaveis>
         <Line style={{ opacity: '0.5', width: '9.375rem' }} />
       </LinkSpaces>
@@ -44,7 +44,7 @@ export const SideMenu = ({ mostra }: any) => {
               />
             </IconContext.Provider>
           </DivIcones>
-          <LinkDecoration to="/tabela">Tabela</LinkDecoration>
+          <LinkDecoration to="/happiness/tabela">Tabela</LinkDecoration>
         </DivClicaveis>
         <Line style={{ opacity: '0.5', width: '9.375rem' }} />
       </LinkSpaces>
