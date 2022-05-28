@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/happiness/static/css/main.43c86f1c.css",
+    "main.js": "/happiness/static/js/main.42600194.js",
+    "static/js/787.22edae46.chunk.js": "/happiness/static/js/787.22edae46.chunk.js",
+    "static/media/Priscila.jpeg": "/happiness/static/media/Priscila.272935c7bca191127a71.jpeg",
+    "static/media/LogoLetraDark.png": "/happiness/static/media/LogoLetraDark.a7160b5ab8725673203e.png",
+    "static/media/Gustavo.jpeg": "/happiness/static/media/Gustavo.5fd89b5e030ba3690cee.jpeg",
+    "static/media/LogoLetraLight.png": "/happiness/static/media/LogoLetraLight.80119bc650c3a59f689a.png",
+    "static/media/carlos.jpeg": "/happiness/static/media/carlos.10edb0f37edc37c34aa9.jpeg",
+    "index.html": "/happiness/index.html",
+    "main.43c86f1c.css.map": "/happiness/static/css/main.43c86f1c.css.map",
+    "main.42600194.js.map": "/happiness/static/js/main.42600194.js.map",
+    "787.22edae46.chunk.js.map": "/happiness/static/js/787.22edae46.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.43c86f1c.css",
+    "static/js/main.42600194.js"
+  ]
+}
