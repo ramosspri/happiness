@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "NaNrdn3qa0est",
+      "nome": "Gustavo Spindola",
+      "email": "gustavo@gmail.com",
+      "telefone": 47988251548,
+      "stacks": [
+        {
+          "language": "python",
+          "framework": "django"
+        },
+        {
+          "language": "java",
+          "framework": "springboot"
+        }
+      ]
+    },
+    {
+      "id": "NaNgvmjte83d18",
+      "nome": "Priscila Ramos",
+      "email": "priscila@gmail.com",
+      "telefone": 69979863476,
+      "stacks": [
+        {
+          "language": "typescript",
+          "framework": "react"
+        },
+        {
+          "language": "javascript",
+          "framework": "bootstrap"
+        }
+      ]
+    },
+    {
+      "id": "NaN9sipo02xrp",
+      "nome": "Carlos Eduardo",
+      "email": "carlos@gmail.com",
+      "telefone": 96975185163,
+      "stacks": [
+        {
+          "language": "typescript",
+          "framework": "react"
+        },
+        {
+          "language": "javascript",
+          "framework": "bootstrap"
+        }
+      ]
+    }
+  ]
+}
