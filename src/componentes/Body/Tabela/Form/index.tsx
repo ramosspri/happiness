@@ -67,7 +67,7 @@ const Form = () => {
 
   async function handleEmailExiste(email: string) {
     let existe = false;
-    await axios.get('http://localhost:3001/users').then((resposta) => {
+    await axios.get('http://localhost:3000/users').then((resposta) => {
       const user = resposta.data.find(
         (user: UsersType) => user.email === email,
       );
@@ -158,7 +158,7 @@ const Form = () => {
 
       if (input.id) {
         const user: UsersType = {
-          id: +input.id,
+          id: input.id,
           nome: input.nome,
           email: input.email,
           telefone: +input.telefone,
@@ -182,7 +182,7 @@ const Form = () => {
         let existe = await handleEmailExiste(input.email);
         if (!existe) {
           const user: UsersType = {
-            id: null,
+            id: + Date.now().toString(36) + Math.random().toString(36).substr(2),
             nome: input.nome,
             email: input.email,
             telefone: +input.telefone,

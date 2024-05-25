@@ -30,20 +30,20 @@ export const Lista = () => {
     setAtivoAcordeao(index);
   }
 
-  async function handleDelete(id: number | null) {
+  async function handleDelete(id: string | null) {
     setMudanca(true);
     await axios
-      .delete(`http://localhost:3001/users/${id}`)
+      .delete(`http://localhost:3000/users/${id}`)
       .then((response) => {});
 
     toast.success('Usuário deletado com sucesso');
   }
 
-  async function handleEditar(id: number | null) {
+  async function handleEditar(id: string | null) {
     setLoader(true);
-
+    console.log(id)
     const user = await axios
-      .get(`http://localhost:3001/users/${id}`)
+      .get(`http://localhost:3000/users/${id}`)
       .then((response) => {
         setInput({
           id: response.data.id,
@@ -63,7 +63,7 @@ export const Lista = () => {
 
   return (
     <ContainerList>
-      <tbody >
+      <tbody>
         <ContainerCabecalho>
           <Cabecalho>ID</Cabecalho>
           <Cabecalho>Nome</Cabecalho>

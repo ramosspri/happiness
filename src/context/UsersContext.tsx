@@ -3,7 +3,7 @@ import { useModal } from '../componentes/Modal';
 import axios from 'axios';
 
 export interface UsersType {
-  id: number | null;
+  id: string | null;
   nome: string;
   email: string;
   telefone: number;
@@ -77,7 +77,7 @@ export const UsersProvider = ({ children }: UserContextProperties) => {
   const [id, setId] = React.useState('');
   const getUsers = async () => {
     setLoader(true);
-    const { data } = await axios.get('http://localhost:3001/users');
+    const { data } = await axios.get('http://localhost:3000/users');
     setUsers(data);
     handleSetUsers(data);
     setMudanca(false);

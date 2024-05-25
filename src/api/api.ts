@@ -2,7 +2,7 @@ import axios from 'axios';
 import {  UsersType } from '../context/UsersContext';
 
 const client = axios.create({
-  baseURL: 'http://localhost:3001/users',
+  baseURL: 'http://localhost:3000/users',
 });
 
 export async function getUsers() {
